@@ -13,21 +13,24 @@
 <body>
     <form method="post" action="/Authentication">
         <fieldset>
-            <legend>Sing In</legend>
+            <legend>Sing In</legend><br>
 
-            <br><label>E-mail:</label>
+            <label>E-mail:</label>
             <input type="email" name="email">
             <button type="submit" >Sing In</button>
-            <a href="/SingUp.html">Sing Up</a>
             <br><br>
         </fieldset>
     </form>
-    <form action="/SingIn.html">
+    <form method="post" action="/InsertDataBase">
         <fieldset>
-            <legend>Sing Up</legend>
-            <input type="text" name="name" placeholder="Nome"><br>
-            <input type="email" name="email" placeholder="Email"><br>
-            <input type="password" name="password" placeholder="Senha"><br>
+            <legend>Sing Up</legend><br>
+
+            <label>Nome:</label>
+            <input type="text" name="name"><br>
+            <label>E-mail:</label>
+            <input type="email" name="email"><br>
+            <label>Senha:</label>
+            <input type="password" name="password"><br>
             <button type="submit">Sing Up</button>
         </fieldset>
     </form>
