@@ -12,6 +12,6 @@ public class HelloServlet extends HttpServlet {
         String nome = request.getParameter("nome");
         PrintWriter out = response.getWriter();
 
-        out.println("Olá " + nome);
+        out.println("Olá, " + nome);
     }
 }
