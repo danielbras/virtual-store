@@ -25,9 +25,9 @@
         <fieldset>
             <legend>Sing Up</legend><br>
 
-            <label>Nome: </label>
+            <label>Nome:</label>
             <input type="text" name="name"><br>
-            <label>E-mail:</label>
+            <label>Email:</label>
             <input type="email" name="email"><br>
             <label>Senha: </label>
             <input type="password" name="password"><br><br>
