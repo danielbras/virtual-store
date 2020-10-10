@@ -15,7 +15,7 @@
         <fieldset>
             <legend>Sing In</legend><br>
 
-            <label>E-mail:</label>
+            <label>Email:</label>
             <input type="email" name="email">
             <button type="submit" >Sing In</button>
             <br><br>
