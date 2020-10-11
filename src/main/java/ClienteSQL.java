@@ -11,11 +11,8 @@ public class ClienteSQL {
             Connection con = ConnectDatabase.getConnection();
             PreparedStatement instruction = con.prepareStatement("INSERT INTO clientes (\"Nome\", \"Email\", \"Senha\") VALUES (?, ?, ? )");
             instruction.setString(1, cli.getNome());
-            System.out.println(cli.getNome());
             instruction.setString(2, cli.getEmail());
-            System.out.println(cli.getEmail());
             instruction.setString(3, cli.getSenha());
-            System.out.println(cli.getSenha());
             instruction.execute();
             con.close();
             System.out.println("Cliente inserido com sucesso!!");
