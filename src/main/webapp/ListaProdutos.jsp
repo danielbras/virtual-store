@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Virtual Store - Product List</title>
+    <title>Virtual Store</title>
 </head>
 <body>
+    <p><%request.getParameter("email");%></p>
+    <h1 align="center">Lista Produtos</h1>
 
 </body>
 </html>
