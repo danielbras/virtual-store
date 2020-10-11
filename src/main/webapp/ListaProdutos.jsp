@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" session="true" %>
-<%@ page import="java.util.List" %>
 <%@ page import="Utils.*" %>
 <%@ page import="java.util.ArrayList" %>
 <html>
@@ -24,7 +23,7 @@
             <th>Descrição</th>
             <th>Preço</th>
             <th>Estoque</th>
-            <th>Carrinho</th>
+            <th>Utils.Carrinho</th>
             <%ArrayList<Produto> produto;%>
             <%=produto = ProdutoSQL.listar()%>
             <%out.println(produto);%>
