@@ -9,7 +9,7 @@ public class ClienteSQL {
         Cliente cli = (Cliente) obj;
         try {
             Connection con = ConnectDatabase.getConnection();
-            PreparedStatement instruction = con.prepareStatement("INSERT INTO CLIENTES (Nome, Email, Senha) VALUES (?, ?, ? )");
+            PreparedStatement instruction = con.prepareStatement("INSERT INTO clientes (\"Nome\", \"Email\", \"Senha\") VALUES (?, ?, ? )");
             instruction.setString(1, cli.getNome());
             System.out.println(cli.getNome());
             instruction.setString(2, cli.getEmail());
