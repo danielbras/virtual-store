@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @WebServlet(name = "ConnectDB", urlPatterns = "/ConnectDB")
-public class ConnectionTest extends HttpServlet {
+public class ConnectionDB extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
