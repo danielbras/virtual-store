@@ -27,10 +27,10 @@
             <%ArrayList<Produto> listaProdutos;%>
             <%=listaProdutos = ProdutoSQL.listar()%>
             <%for (Produto p: listaProdutos) {
-                p.getNome();
-                p.getDescricao();
-                p.getPreco();
-                p.getEstoque();
+                out.println(p.getNome());
+                out.println(p.getDescricao());
+                out.println(p.getPreco());
+                out.println( p.getEstoque());
             }%>
 
         </tr>
