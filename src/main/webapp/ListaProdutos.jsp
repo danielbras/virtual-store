@@ -12,7 +12,6 @@
 </head>
 <body>
     <%HttpSession s = request.getSession();%>
-    <button><%s.invalidate();%>Sair<%response.sendRedirect("/Login.jsp");%></button>
     <h1 align="center">Lista Produtos</h1>
 
 </body>
