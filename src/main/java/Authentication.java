@@ -13,10 +13,16 @@ public class Authentication extends HttpServlet {
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
 
-        Usuario cliente = UsuarioSQL.buscar(email);
+        Usuario usuario = UsuarioSQL.buscar(email);
 
-        if(email.equals(cliente.getEmail()) && senha.equals(cliente.getSenha())) {
-
+        if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
+            if(usuario.getTipo() == "Cliente"){
+                response.sendRedirect("/ListaProdutos.jsp");
+            } else {
+                response.sendRedirect("/ListaProdutos.jsp");
+            }
+        } else {
+            response.sendRedirect("/Login.jsp");
         }
 
 
