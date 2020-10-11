@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" session="true" %>
 <%@ page import="java.util.List" %>
-<%@ page import="Utils.Produto" %>
-<%@ page import="Utils.ProdutoSQL" %>
+<%@ page import="Utils.*" %>
+<%@ page import="java.util.ArrayList" %>
 <html>
 <head>
     <title>Virtual Store</title>
@@ -25,19 +25,22 @@
             <th>Preço</th>
             <th>Estoque</th>
             <th>Carrinho</th>
-        <%for (Produto p : ProdutoSQL.listar()) {%>
-            <tr>
-                <td><%p.getNome();%></td>
-                <td><%p.getDescricao();%></td>
-                <td><%p.getPreco();%></td>
-                <td><%p.getEstoque();%></td>
-                <%if(p.getEstoque() > 0) {%>
-                    <td><a href="">Adicionar</a></td>
-                <%} else {%>
-                    <td>Sem estoque</td>
-                <%}%>
-            </tr>
-        <%}%>
+            <%ArrayList<Produto> produto;%>
+            <%=produto = ProdutoSQL.listar()%>
+            <%out.println(produto);%>
+<%--        <%for (Produto p : ProdutoSQL.listar()) {%>--%>
+<%--            <tr>--%>
+<%--                <td><%p.getNome();%></td>--%>
+<%--                <td><%p.getDescricao();%></td>--%>
+<%--                <td><%p.getPreco();%></td>--%>
+<%--                <td><%p.getEstoque();%></td>--%>
+<%--                <%if(p.getEstoque() > 0) {%>--%>
+<%--                    <td><a href="">Adicionar</a></td>--%>
+<%--                <%} else {%>--%>
+<%--                    <td>Sem estoque</td>--%>
+<%--                <%}%>--%>
+<%--            </tr>--%>
+<%--        <%}%>--%>
         </tr>
     </table>
 </body>
