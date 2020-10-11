@@ -21,7 +21,7 @@
             <br><br>
         </fieldset>
     </form>
-    <form method="post" action="/InsertDataBase">
+    <form method="post" action="/AddClient">
         <fieldset>
             <legend>Sing Up</legend><br>
 
