@@ -17,6 +17,8 @@
 
             <label>Email:</label>
             <input type="email" name="email">
+            <label>Senha: </label>
+            <input type="password" name="senha"><br><br>
             <button type="submit" >Sing In</button>
             <br><br>
         </fieldset>
