@@ -1,3 +1,5 @@
+package Utils;
+
 public class Produto {
     private double preco;
     private String nome;
@@ -10,6 +12,10 @@ public class Produto {
         this.nome = nome;
         this.Descricao = descricao;
         this.estoque = estoque;
+    }
+
+    public Produto() {
+
     }
 
     public double getPreco() {

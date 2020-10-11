@@ -1,13 +1,14 @@
-<%@ page import="java.util.ArrayList" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: carlo
   Date: 10/10/2020
   Time: 17:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" session="true"%>
-<%@page import="ProdutoSQL" %>
-<%@page import="Produto" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" session="true" %>
+<%@ page import="java.util.List" %>
+<%@ page import="Utils.Produto" %>
+<%@ page import="Utils.ProdutoSQL" %>
 <html>
 <head>
     <title>Virtual Store</title>
@@ -24,7 +25,7 @@
             <th>Preço</th>
             <th>Estoque</th>
             <th>Carrinho</th>
-        <%for (Produto p: ProdutoSQL.listar()) {%>
+        <%for (Produto p : ProdutoSQL.listar()) {%>
             <tr>
                 <td><%p.getNome();%></td>
                 <td><%p.getDescricao();%></td>

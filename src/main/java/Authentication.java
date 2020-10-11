@@ -1,14 +1,12 @@
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
+import Utils.Usuario;
+import Utils.UsuarioSQL;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet(name = "AuthServlet", urlPatterns = "/Authentication")
 public class Authentication extends HttpServlet {
@@ -19,10 +17,8 @@ public class Authentication extends HttpServlet {
 
         Usuario usuario = UsuarioSQL.buscar(email);
 
-        ArrayList<Produto> produtos = ProdutoSQL.listar();
-
         if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
-            if(usuario.getTipo() == "Cliente"){
+            if(usuario.getTipo() == "Utils.Cliente"){
                 response.sendRedirect("/ListaProdutos.jsp");
             } else {
                 response.sendRedirect("/ListaProdutos.jsp");

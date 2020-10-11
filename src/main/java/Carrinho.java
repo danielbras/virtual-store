@@ -1,3 +1,5 @@
+import Utils.Produto;
+
 import java.util.ArrayList;
 
 public class Carrinho {

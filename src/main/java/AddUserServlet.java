@@ -1,4 +1,6 @@
-import javax.servlet.RequestDispatcher;
+import Utils.Usuario;
+import Utils.UsuarioSQL;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +15,7 @@ public class AddUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
 
-        Usuario usuario = new Usuario(nome, email, senha, "Cliente");
+        Usuario usuario = new Usuario(nome, email, senha, "Utils.Cliente");
         UsuarioSQL.inserir(usuario);
 
         response.sendRedirect("/Login.jsp");

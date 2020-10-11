@@ -1,3 +1,6 @@
+package Utils;
+
+import Utils.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +21,7 @@ public class ProdutoSQL {
             instruction.setInt(4, p.getEstoque());
             instruction.execute();
             con.close();
-            System.out.println("Produto cadastrado com sucesso!!");
+            System.out.println("Utils.Produto cadastrado com sucesso!!");
         } catch (SQLException e) {
             System.out.println("Erro ao cadastrar produto no banco de dados " + e.getMessage());
         }
