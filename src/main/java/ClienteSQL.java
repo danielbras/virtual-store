@@ -8,13 +8,14 @@ public class ClienteSQL {
         Cliente cli = (Cliente) obj;
         try {
             Connection con = ConnectDatabase.getConnection();
+            System.out.println("PASSOU");
             PreparedStatement instruction = con.prepareStatement("INSERT INTO CLIENTES ( NOME, EMAIL, SENHA) " +
                     " values (?, ?, ? )");
             instruction.setString(1, cli.getNome());
+            System.out.println("PASSOU");
             instruction.setString(2, cli.getEmail());
             instruction.setString(3, cli.getSenha());
-            instruction.executeQuery();
-            System.out.println(cli.getNome() +cli.getEmail() +"\n"+instruction);
+            instruction.execute();
             con.close();
             System.out.println("Cliente inserido com sucesso!!");
         } catch (SQLException e) {
