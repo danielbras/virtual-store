@@ -16,7 +16,7 @@ public class UsuarioSQL {
             instruction.setString(1, cli.getNome());
             instruction.setString(2, cli.getEmail());
             instruction.setString(3, cli.getSenha());
-            instruction.setString(4, "Cliente");
+            instruction.setString(4, cli.getTipo());
             instruction.execute();
             con.close();
             System.out.println("Cliente inserido com sucesso!!");

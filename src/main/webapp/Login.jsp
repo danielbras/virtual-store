@@ -11,7 +11,7 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <form method="post" action="/loja_online_war/Authentication">
+    <form method="post" action="/Authentication">
         <fieldset>
             <legend>Sing In</legend><br>
 
