@@ -8,10 +8,11 @@ public class ClienteSQL {
         Cliente cli = (Cliente) obj;
         try {
             Connection con = ConnectDatabase.getConnection();
-            PreparedStatement instruction = con.prepareStatement("INSERT INTO CLIENTES ('Nome', 'Email', 'Senha') values ('?', '?', '?' )");
-            instruction.setString(1, cli.getNome());
-            instruction.setString(2, cli.getEmail());
-            instruction.setString(3, cli.getSenha());
+            PreparedStatement instruction = con.prepareStatement("INSERT INTO CLIENTES ('', 'Nome', 'Email', 'Senha') values (?, ?, ?, ? )");
+            instruction.setString(1, String.valueOf(0));
+            instruction.setString(2, cli.getNome());
+            instruction.setString(3, cli.getEmail());
+            instruction.setString(4, cli.getSenha());
             instruction.execute();
             con.close();
             System.out.println("Cliente inserido com sucesso!!");
