@@ -27,9 +27,9 @@
         <%for (Produto p: ProdutoSQL.listar()) {%>
             <tr>
                 <td><%p.getNome();%></td>
-                <td><%p.getDescricao()%></td>
-                <td><%p.getPreco()%></td>
-                <td><%p.getEstoque()%></td>
+                <td><%p.getDescricao();%></td>
+                <td><%p.getPreco();%></td>
+                <td><%p.getEstoque();%></td>
                 <%if(p.getEstoque() > 0) {%>
                     <td><a href="">Adicionar</a></td>
                 <%} else {%>
