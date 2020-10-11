@@ -14,6 +14,7 @@
     <%HttpSession s = request.getSession();%>
     <a href="Login.jsp" <%s.invalidate();%>>Sair</a>
     <h1 align="center">Lista Produtos</h1>
+    <%out.println(s.getId());%>
 
 </body>
 </html>
