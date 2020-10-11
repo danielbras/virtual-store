@@ -11,7 +11,8 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <%HttpSession s = request.getSession();%>
+<%--    <%HttpSession s = request.getSession();%>--%>
+    <a href="Login.jsp">Sair</a>
     <h1 align="center">Lista Produtos</h1>
 
 </body>
