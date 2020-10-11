@@ -1,23 +1,23 @@
 public class Cliente {
-    private String name;
+    private String nome;
     private String email;
     private String senha;
 
     public Cliente() {
     }
 
-    public Cliente(String name, String email, String senha) {
-        this.name = name;
+    public Cliente(String nome, String email, String senha) {
+        this.nome = nome;
         this.email = email;
         this.senha = senha;
     }
 
     public String getName() {
-        return name;
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
