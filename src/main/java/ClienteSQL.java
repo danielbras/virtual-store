@@ -4,8 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClienteSQL {
-    private static final String INSERIR = "'INSERT INTO \"CLIENTE\" (\"Nome\", \"Email\", \"Senha\") VALUES(?,?,?)'";
-    private static final String BUSCAR = "'SELECT * FROM CLIENTE WHERE \"Email\"=?'";
+    private static final String INSERIR = "'INSERT INTO \"CLIENTES\" (\"Nome\", \"Email\", \"Senha\") VALUES(?,?,?)'";
+    private static final String BUSCAR = "'SELECT * FROM CLIENTES WHERE \"Email\"=?'";
 
     public static void inserir(Object obj) {
         Cliente cli = (Cliente) obj;
