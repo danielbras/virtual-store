@@ -13,10 +13,11 @@ public class AddClientServlet extends HttpServlet {
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
 
+        response.getWriter().println(nome + email + senha);
         Cliente cliente = new Cliente(nome, email, senha);
         ClienteSQL.inserir(cliente);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Login.jsp");
-        dispatcher.forward(request, response);
+//
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("/Login.jsp");
+//        dispatcher.forward(request, response);
     }
 }
