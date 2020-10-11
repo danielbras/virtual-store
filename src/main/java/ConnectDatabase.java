@@ -14,7 +14,6 @@ public class ConnectDatabase {
     private static final String URL = "jdbc:postgresql://"+HOST+":"+PORT+"/"+NAME+"?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
 
     public static Connection getConnection() throws SQLException {
-
         try {
             Class.forName(DRIVER);
         } catch (ClassNotFoundException ex) {

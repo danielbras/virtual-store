@@ -11,7 +11,7 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <form method="post" action="/Authentication">
+    <form method="post" action="/loja_online_war/Authentication">
         <fieldset>
             <legend>Sing In</legend><br>
 
@@ -30,7 +30,7 @@
             <label>Email:</label>
             <input type="email" name="email"><br>
             <label>Senha: </label>
-            <input type="password" name="password"><br><br>
+            <input type="password" name="senha"><br><br>
             <button type="submit">Sing Up</button>
         </fieldset>
     </form>

@@ -10,7 +10,6 @@ import java.io.IOException;
 public class Authentication extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher =request.getRequestDispatcher("/ListaProdutos.jsp");
-        dispatcher.forward(request, response);
+
     }
 }
