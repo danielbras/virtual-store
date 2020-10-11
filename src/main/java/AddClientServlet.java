@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "AddClientServlet", urlPatterns = {"/AddClient"})
+@WebServlet(name = "AddClientServlet", urlPatterns = {"/AddUser"})
 public class AddClientServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
@@ -14,7 +14,7 @@ public class AddClientServlet extends HttpServlet {
         String senha = request.getParameter("senha");
 
         Cliente cliente = new Cliente(nome, email, senha);
-        ClienteSQL.inserir(cliente);
+        UsuarioSQL.inserir(cliente);
 
         response.sendRedirect("/Login.jsp");
     }

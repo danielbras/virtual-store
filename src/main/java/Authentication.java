@@ -10,6 +10,15 @@ import java.io.IOException;
 public class Authentication extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String email = request.getParameter("email");
+        String senha = request.getParameter("senha");
+
+        Usuario cliente = UsuarioSQL.buscar(email);
+
+        if(email.equals(cliente.getEmail()) && senha.equals(cliente.getSenha())) {
+
+        }
+
 
     }
 }

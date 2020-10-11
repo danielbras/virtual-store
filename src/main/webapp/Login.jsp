@@ -23,7 +23,7 @@
             <br><br>
         </fieldset>
     </form>
-    <form method="post" action="/AddClient">
+    <form method="post" action="/AddUser">
         <fieldset>
             <legend>Sing Up</legend><br>
 
