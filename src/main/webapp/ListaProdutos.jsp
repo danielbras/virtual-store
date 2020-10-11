@@ -23,23 +23,16 @@
             <th>Descrição</th>
             <th>Preço</th>
             <th>Estoque</th>
-            <th>Utils.Carrinho</th>
-            <%ArrayList<Produto> produto;%>
-            <%=produto = ProdutoSQL.listar()%>
-            <%out.println(produto);%>
-<%--        <%for (Produto p : ProdutoSQL.listar()) {%>--%>
-<%--            <tr>--%>
-<%--                <td><%p.getNome();%></td>--%>
-<%--                <td><%p.getDescricao();%></td>--%>
-<%--                <td><%p.getPreco();%></td>--%>
-<%--                <td><%p.getEstoque();%></td>--%>
-<%--                <%if(p.getEstoque() > 0) {%>--%>
-<%--                    <td><a href="">Adicionar</a></td>--%>
-<%--                <%} else {%>--%>
-<%--                    <td>Sem estoque</td>--%>
-<%--                <%}%>--%>
-<%--            </tr>--%>
-<%--        <%}%>--%>
+            <th>Carrinho</th>
+            <%ArrayList<Produto> listaProdutos;%>
+            <%=listaProdutos = ProdutoSQL.listar()%>
+            <%for (Produto p: listaProdutos) {
+                p.getNome();
+                p.getDescricao();
+                p.getPreco();
+                p.getEstoque();
+            }%>
+
         </tr>
     </table>
 </body>
