@@ -16,7 +16,7 @@
             <legend>Sing In</legend><br>
 
             <label>Email:</label>
-            <input type="email" name="email">
+            <input type="email" name="email"><br>
             <label>Senha: </label>
             <input type="password" name="senha"><br><br>
             <button type="submit" >Sing In</button>
