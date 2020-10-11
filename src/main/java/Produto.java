@@ -1,32 +1,22 @@
 public class Produto {
-    private int id;
-    private int preco;
+    private double preco;
     private String nome;
     private String Descricao;
     private int estoque;
 
-    public Produto(int id, int preco, String nome, String descricao, int estoque) {
+    public Produto(String nome, String descricao, double preco, int estoque) {
         super();
-        this.id = id;
         this.preco = preco;
         this.nome = nome;
         this.Descricao = descricao;
         this.estoque = estoque;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(int preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 

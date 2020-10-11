@@ -8,8 +8,7 @@ public class UsuarioSQL {
     private static final String INSERT = "INSERT INTO usuarios (\"Nome\", \"Email\", \"Senha\", \"Tipo\") VALUES (?, ?, ?, ? )";
     private static final String SELECT = "SELECT * FROM usuarios WHERE \"Email\" = ?";
 
-    public static void inserir(Object obj) {
-        Usuario cli = (Usuario) obj;
+    public static void inserir(Usuario cli) {
         try {
             Connection con = ConnectDatabase.getConnection();
             PreparedStatement instruction = con.prepareStatement(INSERT);
