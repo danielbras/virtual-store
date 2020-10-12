@@ -18,8 +18,9 @@ public class Authentication extends HttpServlet {
 
         if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
             HttpSession session = request.getSession();
-            session.setAttribute("usuario", usuario.getEmail());
-            session.setAttribute("tipo", usuario.getTipo());
+            Cookie cookieTipo = new Cookie("tipo", usuario.getTipo());
+
+            response.addCookie(cookieTipo);
 
             ServletContext context = request.getServletContext();
             context.setAttribute("session", session);

@@ -28,12 +28,4 @@ public class InitCarrinhoList implements ServletContextListener,
     public void contextDestroyed(ServletContextEvent sce) {
 
     }
-
-    public void sessionCreated(HttpSessionEvent se) {
-        /* Session is created. */
-    }
-
-    public void sessionDestroyed(HttpSessionEvent se) {
-        /* Session is destroyed. */
-    }
 }

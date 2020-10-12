@@ -17,7 +17,16 @@
     <%
         ServletContext context = request.getServletContext();
         HttpSession s = (HttpSession) context.getAttribute("session");
-        String tipo = (String) s.getAttribute("tipo");
+//        String tipo = (String) s.getAttribute("tipo");
+        Cookie[] c = request.getCookies();
+        String tipo = "Cliente";
+        if (c != null) {
+            for(int i = 0; i < c.length; i++) {
+                if(c[i].getName().equals("tipo")){
+                    tipo = c[i].getValue();
+                }
+            }
+        }
     %>
 
     <a href="Login.jsp <% s.invalidate();%>">Sair</a>
