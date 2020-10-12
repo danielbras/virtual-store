@@ -22,12 +22,8 @@ public class Authentication extends HttpServlet {
 
             RequestDispatcher encaminhar = request.getRequestDispatcher("/ListaProdutos.jsp");
             encaminhar.forward(request, response);
-
-//            response.sendRedirect("/ListaProdutos.jsp?tipo="+usuario.getTipo());
         } else {
             response.sendRedirect("/Login.jsp");
         }
-
-
     }
 }
