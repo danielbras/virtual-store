@@ -9,7 +9,8 @@ import java.util.ArrayList;
 
 public class ProdutoSQL {
     private static final String INSERT = "INSERT INTO produtos (\"Nome\", \"Descricao\", \"Preco\", \"Estoque\") VALUES (?, ?, ?, ?)";
-    private static final String SELECT = "SELECT * FROM produtos";
+    private static final String SELECTALL = "SELECT * FROM produtos";
+    private static final String SELECT = "SELECT * FROM produtos WHERE \"Nome\"= ?";
 
     public static void inserir(Produto p) {
         try {
@@ -31,7 +32,7 @@ public class ProdutoSQL {
         ArrayList<Produto> listaProdutos = new ArrayList<>();
         try {
             Connection con = ConnectDatabase.getConnection();
-            PreparedStatement instruction = con.prepareStatement(SELECT);
+            PreparedStatement instruction = con.prepareStatement(SELECTALL);
             ResultSet res = instruction.executeQuery();
             while (res.next()) {
                 Produto p = new Produto(res.getString("Nome"),res.getString("Descricao"), res.getDouble("Preco"), res.getInt("Estoque"));
@@ -43,5 +44,23 @@ public class ProdutoSQL {
             System.out.println("Erro ao emitir a listagem de produtos no banco banco de dados " + e.getMessage());
             }
         return listaProdutos;
+
+    }public static Produto buscar(String nome){
+        Produto produto = null;
+        try {
+            Connection con = ConnectDatabase.getConnection();
+            PreparedStatement instruction = con.prepareStatement(SELECT);
+            instruction.setString(1, nome);
+            ResultSet res = instruction.executeQuery();
+            while (res.next()) {
+                produto = new Produto(res.getString("Nome"),res.getString("Descricao"), res.getDouble("Preco"), res.getInt("Estoque"));
+
+            }
+            con.close();
+            System.out.println("A busca pelo produto foi realizada!");
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar produto no banco banco de dados " + e.getMessage());
+            }
+        return produto;
     }
 }
