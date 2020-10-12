@@ -14,10 +14,13 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <%HttpSession s = request.getSession();%>
-    <%s.setAttribute("SessionID" ,s.getId());%>
+    <% HttpSession s = request.getSession(); %>
+    <% s.setAttribute("SessionID" ,s.getId()); %>
 
-    <a href="Login.jsp" <%s.invalidate();%>>Sair</a>
+    <a href="Login.jsp" <% s.invalidate(); %>>Sair</a>
+
+    <% String tipo = request.getParameter("tipo"); %>
+    <% out.println(tipo); %>
 
     <h1 align="center">Lista Produtos</h1>
     <table align="center" border="1">
