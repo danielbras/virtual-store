@@ -16,16 +16,21 @@ public class CarrinhoServlet extends HttpServlet {
         String nome = request.getParameter("nome");
         String comando = request.getParameter("command");
 
+        ServletContext context = request.getServletContext();
+        HttpSession s = (HttpSession) context.getAttribute("session");
+
         Produto produto = ProdutoSQL.buscar(nome);
-
-
+        s.setAttribute("nome", produto.getNome());
+        s.setAttribute("descricao", produto.getDescricao());
+        s.setAttribute("preco", produto.getPreco());
+//        to do inserir quantidade na sessão
 //        if(comando.equals("add")) {
 
 //        } else if(comando.equals("remove")) {
 //
 //        }
 //
-//        RequestDispatcher encaminhar = request.getRequestDispatcher("/ListaProdutos.jsp");
-//        encaminhar.forward(request, response);
+        RequestDispatcher encaminhar = request.getRequestDispatcher("/ListaProdutos.jsp");
+        encaminhar.forward(request, response);
     }
 }
