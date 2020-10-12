@@ -1,5 +1,4 @@
-import Utils.Usuario;
-import Utils.UsuarioSQL;
+package Utils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "AuthServlet", urlPatterns = "/Authentication")
+@WebServlet(name = "AuthServlet", urlPatterns = "/Utils.Authentication")
 public class Authentication extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,7 +20,7 @@ public class Authentication extends HttpServlet {
             if(usuario.getTipo().equals("Cliente")){
                 response.sendRedirect("/ListaProdutos.jsp");
             } else {
-                response.sendRedirect("/ListaProdutos.jsp?tipo=Admin");
+                response.sendRedirect("/ListaProdutos.jsp?tipo=Lojista");
             }
         } else {
             response.sendRedirect("/Login.jsp");
