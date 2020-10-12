@@ -12,6 +12,6 @@
 </head>
 <body>
     <h1>Lista Carrinho</h1>
-
+    <a href="ListaProdutos.jsp?tipo=Cliente">Ver Produtos</a>
 </body>
 </html>
