@@ -39,7 +39,7 @@
             <%for (Produto p: listaProdutos) { %>
                 <tr>
                     <td><% out.println(p.getNome()); %></td>
-                    <td><% out.println(p.getDescricao()s()); %></td>
+                    <td><% out.println(p.getDescricao()); %></td>
                     <td><% out.println(p.getPreco()); %></td>
                     <td><% out.println(p.getEstoque()); %></td>
                     <%if(tipo.equals("Cliente")) { %>
