@@ -14,7 +14,7 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <%HttpSession s = request.%>
+    <%HttpSession s = request.getSession(false);%>
     <%String nome = (String) s.getAttribute("usuario");%>
     <%String tipo = (String) s.getAttribute("tipo");%>
     <%out.println(nome + tipo);%>
