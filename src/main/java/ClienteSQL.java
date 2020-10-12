@@ -1,4 +1,3 @@
-import Utils.Cliente;
 import Utils.ConnectDatabase;
 
 import java.sql.Connection;
@@ -17,7 +16,7 @@ public class ClienteSQL {
             instruction.setString(3, cli.getSenha());
             instruction.execute();
             con.close();
-            System.out.println("Utils.Cliente inserido com sucesso!!");
+            System.out.println("Cliente inserido com sucesso!!");
         } catch (SQLException e) {
             System.out.println("Erro ao inserir cliente no banco de dados " + e.getMessage());
         }
