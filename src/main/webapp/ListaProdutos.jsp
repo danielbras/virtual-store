@@ -29,11 +29,11 @@
             <%=listaProdutos = ProdutoSQL.listar()%>
             <% for (Produto p: listaProdutos) { %>
                 <tr>
-                    <td><%p.getNome();%></td>
-                    <td><%p.getDescricao();%></td>
-                    <td><%p.getPreco();%></td>
-                    <td><%p.getEstoque();%></td>
-                    <td><a>Adicionar</a></td>
+                    <td><% out.println(p.getNome()); %></td>
+                    <td><% out.println(p.getDescricao()); %></td>
+                    <td><% out.println(p.getPreco()); %></td>
+                    <td><% out.println(p.getEstoque()); %></td>
+                    <td><a href="">Adicionar</a></td>
                 </tr>
             <% } %>
     </table>
