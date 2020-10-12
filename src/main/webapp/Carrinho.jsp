@@ -11,6 +11,6 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <h1 align="center">Lista Carrinho</h1>
+    <h1>Lista Carrinho</h1>
 </body>
 </html>
