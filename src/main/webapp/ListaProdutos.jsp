@@ -47,10 +47,12 @@
 
     <%if(tipo.equals("Cliente")) {%>
         <%if(s != null) {%>
-            <a href="">
+            <a href="Carrinho.jsp">
                 Ver Carrinho
             </a>
-        <%} %>
+        <%} else {
+            response.sendRedirect("/ListaProdutos.jsp?tipo=Cliente");
+        } %>
     <%} else {%>
         <a href="CadastrarProduto.jsp">Cadastrar Produto</a>
     <%}%>
