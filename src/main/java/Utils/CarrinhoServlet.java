@@ -21,6 +21,7 @@ public class CarrinhoServlet extends HttpServlet {
         ServletContext context = request.getServletContext();
         HttpSession session = (HttpSession) context.getAttribute("sessao");
         String user = (String) session.getAttribute("usuario");
+        context.removeAttribute("session");
         response.getWriter().println(user);
 
 //        String user = (String) session.getAttribute("usuario");
