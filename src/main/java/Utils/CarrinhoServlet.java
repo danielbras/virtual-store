@@ -15,6 +15,7 @@ public class CarrinhoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nomeProduto = request.getParameter("nome");
         String comando = request.getParameter("command");
+
         ServletContext context = request.getServletContext();
         HttpSession session = (HttpSession) context.getAttribute("sessao");
 
@@ -22,7 +23,6 @@ public class CarrinhoServlet extends HttpServlet {
 
         String user = (String) session.getAttribute("usuario");
 
-        context.removeAttribute("sessao");
         response.getWriter().println(user);
 
 //        String user = (String) session.getAttribute("usuario");

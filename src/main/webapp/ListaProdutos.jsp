@@ -5,7 +5,7 @@
   Time: 17:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" session="true" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Utils.Produto" %>
 <%@ page import="Utils.ProdutoSQL" %>
@@ -14,11 +14,16 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <%HttpSession s = request.getSession(false);%>
-    <%String user = (String) s.getAttribute("usuario");%>
-    <%String tipo = (String) s.getAttribute("tipo");%>
-<%--    <% s.invalidate(); %>--%>
-    <a href="Login.jsp">Sair</a>
+    <%
+        HttpSession s = request.getSession(false);
+        String user = (String) s.getAttribute("usuario");
+        String tipo = (String) s.getAttribute("tipo");
+
+        ServletContext context = request.getServletContext();
+        context.setAttribute("sessao", s);
+    %>
+
+    <a href="Login.jsp <% s.invalidate();%>">Sair</a>
     <%out.println(user +" "+ tipo +" "+ s);%>
 
     <h1>Lista Produtos</h1>
@@ -43,13 +48,8 @@
                     <%if(tipo.equals("Cliente")) { %>
                         <td>
                             <%if(p.getEstoque() > 0) { %>
-                                <%
-                                    ServletContext context = request.getServletContext();
-                                    context.setAttribute("sessao", s);
-
-                                    String nomeProd = p.getNome();
-                                %>
-                                <a href="/Carrinho?nome=<%=nomeProd%>&&command=add">Adicionar</a>
+                                <% String nomeProduto = p.getNome();%>
+                                <a href="/Carrinho?nome=<%=nomeProduto%>&&command=add">Adicionar</a>
                             <%} else {
                                 out.println("Sem estoque");
                             }%>
