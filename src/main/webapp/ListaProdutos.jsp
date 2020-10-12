@@ -44,6 +44,9 @@
                     <%} %>
                 </tr>
             <%} %>
+        <tr>
+            <td><a href="Carrinho.jsp">Ver Carrinho</a></td>
+        </tr>
     </table>
 </body>
 </html>
