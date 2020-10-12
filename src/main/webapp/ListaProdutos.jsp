@@ -9,6 +9,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Utils.Produto" %>
 <%@ page import="Utils.ProdutoSQL" %>
+<%@ page import="java.util.Enumeration" %>
 <html>
 <head>
     <title>Virtual Store</title>
@@ -42,7 +43,7 @@
                     <td><% out.println(p.getEstoque()); %></td>
                     <%if(tipo.equals("Cliente")) { %>
                         <td><%if(p.getEstoque() > 0) { %>
-                            <a href="">Adicionar</a>
+                            <a href="<%s.setAttribute("nome", p.getNome());%>">Adicionar</a>
                         <%} else {
                             out.println("Sem estoque");
                         }%>
@@ -51,6 +52,15 @@
                 </tr>
             <%} %>
     </table>
+
+    <%
+        Enumeration<String> p = s.getAttributeNames();
+
+        while (p.hasMoreElements()) {
+            out.println(p.nextElement());
+        }
+    %>
+
     <%if(tipo.equals("Cliente")) {%>
         <%if(s != null) { %>
             <a href="Carrinho.jsp">Ver Carrinho</a>
