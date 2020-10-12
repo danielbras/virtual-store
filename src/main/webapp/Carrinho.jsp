@@ -12,8 +12,6 @@
 </head>
 <body>
     <h1>Lista Carrinho</h1>
-    <a href="<%RequestDispatcher dispatcher = request.getRequestDispatcher("/ListaProdutos.jsp?tipo=Cliente");%><%dispatcher.forward(request, response);%>">
-        Ver Produtos
-    </a>
+    <a href="ListaProdutos.jsp?tipo=Cliente"></a>
 </body>
 </html>
