@@ -18,8 +18,8 @@ public class Authentication extends HttpServlet {
         Usuario usuario = UsuarioSQL.buscar(email);
 
         if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
-            if(usuario.getTipo() == "Cliente"){
-                response.sendRedirect("/ListaProdutos.jsp");
+            if(usuario.getTipo().equals("Cliente")){
+                response.sendRedirect("/ListaProdutos.jsp?tipo=Cliente");
             } else {
                 response.sendRedirect("/ListaProdutos.jsp");
             }
