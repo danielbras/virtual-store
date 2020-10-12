@@ -16,7 +16,9 @@
 <body>
     <%HttpSession s = request.getSession();%>
     <%s.setAttribute("SessionID" ,s.getId());%>
+
     <a href="Login.jsp" <%s.invalidate();%>>Sair</a>
+
     <h1 align="center">Lista Produtos</h1>
     <table align="center" border="1">
         <tr>
@@ -27,7 +29,7 @@
             <th>Carrinho</th>
         </tr>
             <%ArrayList<Produto> listaProdutos;%>
-            <%=listaProdutos = ProdutoSQL.listar()%>
+            <%listaProdutos = ProdutoSQL.listar();%>
             <% for (Produto p: listaProdutos) { %>
                 <tr>
                     <td><% out.println(p.getNome()); %></td>

@@ -15,7 +15,7 @@ public class AddUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
 
-        Usuario usuario = new Usuario(nome, email, senha, "Utils.Cliente");
+        Usuario usuario = new Usuario(nome, email, senha, "Cliente");
         UsuarioSQL.inserir(usuario);
 
         response.sendRedirect("/Login.jsp");

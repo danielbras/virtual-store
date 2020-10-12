@@ -1,8 +1,5 @@
 package Utils;
 
-import Utils.ConnectDatabase;
-import Utils.Usuario;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +19,7 @@ public class UsuarioSQL {
             instruction.setString(4, cli.getTipo());
             instruction.execute();
             con.close();
-            System.out.println("Utils.Cliente inserido com sucesso!!");
+            System.out.println("Cliente inserido com sucesso!!");
         } catch (SQLException e) {
             System.out.println("Erro ao inserir cliente no banco de dados " + e.getMessage());
         }
