@@ -17,8 +17,8 @@
     <%HttpSession s = request.getSession(false);%>
     <%String user = (String) s.getAttribute("usuario");%>
     <%String tipo = (String) s.getAttribute("tipo");%>
-
-    <a href="Login.jsp<% s.invalidate(); %>">Sair</a>
+<%--    <% s.invalidate(); %>--%>
+    <a href="Login.jsp">Sair</a>
     <%out.println(user +" "+ tipo +" "+ s);%>
 
     <h1>Lista Produtos</h1>
