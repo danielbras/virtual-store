@@ -16,10 +16,10 @@
 <body>
     <%HttpSession s = request.getSession(false);%>
     <%String nome = (String) s.getAttribute("user");%>
-    <%String tipo = request.getParameter("tipo"); %>
+    <%String tipo = (String) s.getAttribute("tipo");%>
+    <%out.println(nome);%>
 
     <a href="Login.jsp<% s.invalidate(); %>">Sair</a>
-    <%out.println(nome);%>
 
     <h1>Lista Produtos</h1>
     <table border="1">
@@ -50,7 +50,7 @@
         <%if(s != null) { %>
             <a href="Carrinho.jsp">Ver Carrinho</a>
         <%} else {
-            response.sendRedirect("/ListaProdutos.jsp?tipo=Cliente");
+            response.sendRedirect("/ListaProdutos.jsp");
         }%>
     <%} else {%>
         <a href="CadastrarProduto.jsp">Cadastrar Produto</a>
