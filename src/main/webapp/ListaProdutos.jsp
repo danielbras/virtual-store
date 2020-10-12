@@ -14,6 +14,7 @@
     <title>Virtual Store</title>
 </head>
 <body>
+    <%HttpSession s = request.getSession(false);%>
     <%String tipo = request.getParameter("tipo"); %>
 
     <a href="Login.jsp" <% session.invalidate(); %>>Sair</a>
@@ -44,12 +45,10 @@
             <%} %>
     </table>
 
-    <%out.println(request.getSession());%>
-
     <%if(tipo.equals("Cliente")) {%>
-        <%%>
+        <%if(s != null) {%>
             <a href="Carrinho.jsp">Ver Carrinho</a>
-        <%%>
+        <%} %>
     <%} else {%>
         <a href="CadastrarProduto.jsp">Cadastrar Produto</a>
     <%}%>
