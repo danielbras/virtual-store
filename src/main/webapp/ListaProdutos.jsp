@@ -17,12 +17,11 @@
     <%
         ServletContext context = request.getServletContext();
         HttpSession s = (HttpSession) context.getAttribute("session");
-        String user = (String) s.getAttribute("usuario");
         String tipo = (String) s.getAttribute("tipo");
     %>
 
     <a href="Login.jsp <% s.invalidate();%>">Sair</a>
-    <%out.println(user +" "+ tipo +" "+ s);%>
+    <%out.println(tipo +" "+ s);%>
 
     <h1>Lista Produtos</h1>
     <table border="1">
