@@ -41,7 +41,12 @@
                     <td><% out.println(p.getPreco()); %></td>
                     <td><% out.println(p.getEstoque()); %></td>
                     <%if(tipo.equals("Cliente")) { %>
-                        <td><a href="">Adicionar</a></td>
+                        <td><%if(p.getEstoque() > 0) { %>
+                            <a href="">Adicionar</a>
+                        <%} else {
+                            out.println("Sem estoque");
+                        }%>
+                        </td>
                     <%} %>
                 </tr>
             <%} %>
