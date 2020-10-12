@@ -45,6 +45,6 @@
                 </tr>
             <%} %>
     </table>
-<%--    <a href="<%response.sendRedirect("/Carrinho.jsp");%>">Ver Carrinho</a>--%>
+    <a href="Carrinho.jsp">Ver Carrinho</a>
 </body>
 </html>
