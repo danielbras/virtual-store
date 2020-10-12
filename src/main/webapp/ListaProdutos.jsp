@@ -19,7 +19,7 @@
     <%String tipo = (String) s.getAttribute("tipo");%>
 
     <a href="Login.jsp<% s.invalidate(); %>">Sair</a>
-    <%out.println(user +" "+ tipo);%>
+    <%out.println(user +" "+ tipo +" "+ s);%>
 
     <h1>Lista Produtos</h1>
     <table border="1">

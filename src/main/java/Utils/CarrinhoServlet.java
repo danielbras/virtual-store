@@ -13,14 +13,15 @@ import java.io.IOException;
 public class CarrinhoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        String nomeProduto = request.getParameter("nome");
-        String comando = request.getParameter("command");
+//        String comando = request.getParameter("command");
 //
 //        Produto produto = ProdutoSQL.buscar(nomeProduto);
 
         HttpSession session = request.getSession(false);
+        response.getWriter().println(session);
         String user = (String) session.getAttribute("usuario");
 
-        response.getWriter().println(user + " " + comando);
+        response.getWriter().println(user);
 //
 //        if(comando.equals("add")) {
 //            session.setAttribute("nome", produto.getNome());
