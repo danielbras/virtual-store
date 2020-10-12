@@ -44,7 +44,7 @@
             <%} %>
     </table>
 
-    <%request.getSession();%>
+    <%out.println(request.getSession());%>
 
     <%if(tipo.equals("Cliente")) {%>
         <%%>
