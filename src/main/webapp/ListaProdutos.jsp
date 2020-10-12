@@ -43,7 +43,9 @@
                     <%if(tipo.equals("Cliente")) { %>
                         <td>
                             <%if(p.getEstoque() > 0) { %>
-                                <a href="Carrinho">Adicionar</a>
+                                <%! RequestDispatcher encaminhar;%>
+                                <% encaminhar = request.getRequestDispatcher("/Carrinho");%>
+                                <a href="<%encaminhar.forward(request, response);%>">Adicionar</a>
                             <%} else {
                                 out.println("Sem estoque");
                             }%>

@@ -19,15 +19,14 @@ public class CarrinhoServlet extends HttpServlet {
 
         HttpSession session = request.getSession(false);
         response.getWriter().println(session);
-        String user = (String) session.getAttribute("usuario");
-
-        response.getWriter().println(user);
+//        String user = (String) session.getAttribute("usuario");
+//
+//        response.getWriter().println(user);
 //
 //        if(comando.equals("add")) {
 //            session.setAttribute("nome", produto.getNome());
 //            session.setAttribute("descricao", produto.getDescricao());
 //            session.setAttribute("preco", produto.getPreco());
-//        //  TODO Atulizar estoque no BD
 //        } else if(comando.equals("remove")) {
 //
 //        }
