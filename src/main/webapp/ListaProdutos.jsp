@@ -18,7 +18,8 @@
     <%String id = s.getId();%>
     <%String tipo = request.getParameter("tipo"); %>
 
-    <a href="Login.jsp" <% session.invalidate(); %>>Sair</a>
+    <a href="Login.jsp<% session.invalidate(); %>">Sair</a>
+    <%out.println(id);%>
 
     <h1>Lista Produtos</h1>
     <table border="1">
@@ -45,7 +46,6 @@
                 </tr>
             <%} %>
     </table>
-    <%out.println(id);%>
     <%if(tipo.equals("Cliente")) {%>
         <%if(s != null) { %>
             <a href="Carrinho.jsp">Ver Carrinho</a>
