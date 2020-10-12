@@ -11,7 +11,7 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <form method="post" action="/Authentication">
+    <form method="post" action="/ListaProdutos">
         <fieldset>
             <legend>Sing In</legend><br>
 
@@ -24,7 +24,7 @@
         </fieldset>
     </form>
 
-    <form method="post" action="/AddUser">
+    <form method="post" action="/AddUsuario">
         <fieldset>
             <legend>Sing Up</legend><br>
 
