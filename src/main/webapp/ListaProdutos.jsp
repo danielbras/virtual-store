@@ -18,12 +18,10 @@
         HttpSession s = request.getSession(false);
         String user = (String) s.getAttribute("usuario");
         String tipo = (String) s.getAttribute("tipo");
-
-        s.isNew()
     %>
 
     <a href="Login.jsp <% s.invalidate();%>">Sair</a>
-    <%out.println(user +" "+ tipo +" "+ s + "\n" + sess);%>
+    <%out.println(user +" "+ tipo +" "+ s);%>
 
     <h1>Lista Produtos</h1>
     <table border="1">
