@@ -9,18 +9,17 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Utils.Produto" %>
 <%@ page import="Utils.ProdutoSQL" %>
-<%@ page import="java.util.Enumeration" %>
 <html>
 <head>
     <title>Virtual Store</title>
 </head>
 <body>
     <%HttpSession s = request.getSession(false);%>
-    <%String nome = (String) s.getAttribute("usuario");%>
+    <%String user = (String) s.getAttribute("usuario");%>
     <%String tipo = (String) s.getAttribute("tipo");%>
 
     <a href="Login.jsp<% s.invalidate(); %>">Sair</a>
-    <%out.println(nome +" "+ tipo);%>
+    <%out.println(user +" "+ tipo);%>
 
     <h1>Lista Produtos</h1>
     <table border="1">
@@ -36,17 +35,19 @@
             <%ArrayList<Produto> listaProdutos; %>
             <%listaProdutos = ProdutoSQL.listar(); %>
             <%for (Produto p: listaProdutos) { %>
+                <%String nome = p.getNome(); %>
                 <tr>
-                    <td><% out.println(p.getNome()); %></td>
+                    <td><% out.println(nome); %></td>
                     <td><% out.println(p.getDescricao()); %></td>
                     <td><% out.println(p.getPreco()); %></td>
                     <td><% out.println(p.getEstoque()); %></td>
                     <%if(tipo.equals("Cliente")) { %>
-                        <td><%if(p.getEstoque() > 0) { %>
-                            <a href="/Carrinho?nome=<%=p.getNome()%>&&command=add">Adicionar</a>
-                        <%} else {
-                            out.println("Sem estoque");
-                        }%>
+                        <td>
+                            <%if(p.getEstoque() > 0) { %>
+                                <a href="/Carrinho?nome=<%=nome%>&&command=add">Adicionar</a>
+                            <%} else {
+                                out.println("Sem estoque");
+                            }%>
                         </td>
                     <%} %>
                 </tr>
