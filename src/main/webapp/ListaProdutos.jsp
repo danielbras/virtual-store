@@ -5,7 +5,7 @@
   Time: 17:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" session="false" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Utils.Produto" %>
 <%@ page import="Utils.ProdutoSQL" %>
@@ -18,7 +18,7 @@
     <%String id = s.getId();%>
     <%String tipo = request.getParameter("tipo"); %>
 
-    <a href="Login.jsp<% session.invalidate(); %>">Sair</a>
+    <a href="Login.jsp<% s.invalidate(); %>">Sair</a>
     <%out.println(id);%>
 
     <h1>Lista Produtos</h1>
