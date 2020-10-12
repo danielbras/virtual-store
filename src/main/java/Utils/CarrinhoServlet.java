@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "VerCarrinhoServlet", urlPatterns = {"/Carrinho"})
 public class CarrinhoServlet extends HttpServlet {
@@ -18,14 +19,12 @@ public class CarrinhoServlet extends HttpServlet {
         String comando = request.getParameter("command");
 
         Produto produto = ProdutoSQL.buscar(nome);
+        ServletContext context = getServletContext();
+        Carrinho carrinho = (Carrinho) context.getAttribute("carrinho");
 
         if(comando.equals("add")) {
-            Carrinho carrinho = new Carrinho();
             carrinho.addProduto(produto);
         } else if(comando.equals("remove")) {
-            ServletContext context = getServletContext();
-            ArrayList<Produto> produtos = (ArrayList<Produto>) context.getAttribute("carrinho");
-            Carrinho carrinho = new Carrinho(produtos);
             carrinho.removeProduto(produto.getNome());
         }
 

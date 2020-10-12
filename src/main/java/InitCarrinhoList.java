@@ -19,11 +19,10 @@ public class InitCarrinhoList implements ServletContextListener,
     }
 
     public void contextInitialized(ServletContextEvent sce) {
-        List<Carrinho> carrinhoList = new ArrayList<>();
+        Carrinho carrinho = new Carrinho();
 
         ServletContext servletContext = sce.getServletContext();
-        servletContext.setAttribute("carrinho", carrinhoList);
-
+        servletContext.setAttribute("carrinho", carrinho);
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
