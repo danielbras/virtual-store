@@ -14,13 +14,11 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <% HttpSession s = request.getSession(); %>
-    <% s.setAttribute("SessionID" ,s.getId()); %>
+    <%HttpSession s = request.getSession(); %>
+    <%s.setAttribute("SessionID" ,s.getId()); %>
+    <%String tipo = request.getParameter("tipo"); %>
 
     <a href="Login.jsp" <% s.invalidate(); %>>Sair</a>
-
-    <% String tipo = request.getParameter("tipo"); %>
-    <% out.println(tipo); %>
 
     <h1 align="center">Lista Produtos</h1>
     <table align="center" border="1">
@@ -29,19 +27,23 @@
             <th>Descrição</th>
             <th>Preço</th>
             <th>Estoque</th>
-            <th>Carrinho</th>
+            <%if(!tipo.equals("Lojista")) { %>
+                <th>Carrinho</th>
+            <%} %>
         </tr>
-            <%ArrayList<Produto> listaProdutos;%>
-            <%listaProdutos = ProdutoSQL.listar();%>
-            <% for (Produto p: listaProdutos) { %>
+            <%ArrayList<Produto> listaProdutos; %>
+            <%listaProdutos = ProdutoSQL.listar(); %>
+            <%for (Produto p: listaProdutos) { %>
                 <tr>
                     <td><% out.println(p.getNome()); %></td>
                     <td><% out.println(p.getDescricao()); %></td>
                     <td><% out.println(p.getPreco()); %></td>
                     <td><% out.println(p.getEstoque()); %></td>
-                    <td><a href="">Adicionar</a></td>
+                    <%if(!tipo.equals("Lojista")) { %>
+                        <td><a href="">Adicionar</a></td>
+                    <%} %>
                 </tr>
-            <% } %>
+            <%} %>
     </table>
 </body>
 </html>
