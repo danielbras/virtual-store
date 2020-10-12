@@ -49,7 +49,7 @@
         <%if(s != null) {%>
 
             <a href="<%RequestDispatcher dispatcher = request.getRequestDispatcher("/Carrinho.jsp");%>">
-                <%dispatcher.forward(request, response)%>
+                <%dispatcher.forward(request, response);%>
                 Ver Carrinho
             </a>
         <%} else {
