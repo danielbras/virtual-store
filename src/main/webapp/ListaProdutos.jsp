@@ -5,7 +5,7 @@
   Time: 17:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Utils.Produto" %>
 <%@ page import="Utils.ProdutoSQL" %>
@@ -47,7 +47,8 @@
 
     <%if(tipo.equals("Cliente")) {%>
         <%if(s != null) {%>
-            <a href="Carrinho.jsp">
+            <%RequestDispatcher dispatcher = request.getRequestDispatcher("/Carrinho.jsp");%>
+            <a href="<%dispatcher.forward(request, response);%>">
                 Ver Carrinho
             </a>
         <%} else {
