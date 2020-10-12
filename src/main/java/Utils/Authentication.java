@@ -1,11 +1,12 @@
 package Utils;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet(name = "AuthServlet", urlPatterns = "/Authentication")
+@WebServlet(name = "AuthServlet", urlPatterns = "/ListaProdutos")
 public class Authentication extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -15,16 +16,13 @@ public class Authentication extends HttpServlet {
         Usuario usuario = UsuarioSQL.buscar(email);
 
         if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
-            Cookie cookieUser = new Cookie(usuario.getNome(), usuario.getEmail());
-            response.addCookie(cookieUser);
             HttpSession session = request.getSession(true);
-            response.sendRedirect("/ListaProdutos.jsp?tipo="+usuario.getTipo());
+            session.setAttribute("user", usuario.getEmail());
 
-//            if(usuario.getTipo().equals("Cliente")){
-//                response.sendRedirect("/ListaProdutos.jsp?tipo=Cliente");
-//            } else {
-//                response.sendRedirect("/ListaProdutos.jsp?tipo=Lojista");
-//            }
+            RequestDispatcher encaminhar = request.getRequestDispatcher("/ListaProdutos.jsp?tipo="+usuario.getTipo());
+            encaminhar.forward(request, response);
+
+//            response.sendRedirect("/ListaProdutos.jsp?tipo="+usuario.getTipo());
         } else {
             response.sendRedirect("/Login.jsp");
         }
