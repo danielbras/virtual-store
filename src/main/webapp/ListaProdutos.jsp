@@ -43,7 +43,7 @@
                     <td><% out.println(p.getEstoque()); %></td>
                     <%if(tipo.equals("Cliente")) { %>
                         <td><%if(p.getEstoque() > 0) { %>
-                            <a href="Carrinho?nome=<%p.getNome();%>&&command=add">Adicionar</a>
+                            <a href="Carrinho?nome=<%=p.getNome()%>&&command=add">Adicionar</a>
                         <%} else {
                             out.println("Sem estoque");
                         }%>
