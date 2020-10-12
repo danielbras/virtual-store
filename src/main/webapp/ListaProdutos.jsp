@@ -19,8 +19,7 @@
         String user = (String) s.getAttribute("usuario");
         String tipo = (String) s.getAttribute("tipo");
 
-        ServletContext context = request.getServletContext();
-        HttpSession sess = (HttpSession) context.getAttribute("sessao");
+        s.isNew()
     %>
 
     <a href="Login.jsp <% s.invalidate();%>">Sair</a>
@@ -40,15 +39,27 @@
             <%ArrayList<Produto> listaProdutos; %>
             <%listaProdutos = ProdutoSQL.listar(); %>
             <%for (Produto p: listaProdutos) { %>
+                <%
+                    String nome = p.getNome();
+                    String descricao = p.getDescricao();
+                    Double preco = p.getPreco();
+                    int estoque = p.getEstoque();
+                %>
                 <tr>
-                    <td><% out.println(p.getNome()); %></td>
-                    <td><% out.println(p.getDescricao()); %></td>
-                    <td><% out.println(p.getPreco()); %></td>
-                    <td><% out.println(p.getEstoque()); %></td>
+                    <td><% out.println(nome); %></td>
+                    <td><% out.println(descricao); %></td>
+                    <td><% out.println(preco); %></td>
+                    <td><% out.println(estoque); %></td>
                     <%if(tipo.equals("Cliente")) { %>
                         <td>
                             <%if(p.getEstoque() > 0) { %>
-                                <a href="/Carrinho?nome=<%p.getNome();%>&&command=add">Adicionar</a>
+                                <%
+                                    s.setAttribute("nome", nome);
+                                    s.setAttribute("descricao", descricao);
+                                    s.setAttribute("preco", preco);
+                                    s.setAttribute("quantidade", estoque);
+                                %>
+                                <a href="/Carrinho?nome=<%=nome%>&&command=add">Adicionar</a>
                             <%} else {
                                 out.println("Sem estoque");
                             }%>
