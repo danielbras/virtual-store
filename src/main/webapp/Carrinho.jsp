@@ -13,6 +13,6 @@
 <body>
     <h1>Lista Carrinho</h1>
 
-    <a <% response.sendRedirect("ListaProdutos.jsp");%>>Ver Produtos</a>
+    <button onclick="<%response.sendRedirect("ListaProdutos.jsp");%>">Ver Produtos</button>
 </body>
 </html>
