@@ -15,7 +15,8 @@
 </head>
 <body>
     <%
-        HttpSession s = request.getSession(false);
+        ServletContext context = request.getServletContext();
+        HttpSession s = (HttpSession) context.getAttribute("session");
         String user = (String) s.getAttribute("usuario");
         String tipo = (String) s.getAttribute("tipo");
     %>

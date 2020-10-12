@@ -21,6 +21,9 @@ public class Authentication extends HttpServlet {
             session.setAttribute("usuario", usuario.getEmail());
             session.setAttribute("tipo", usuario.getTipo());
 
+            ServletContext context = request.getServletContext();
+            context.setAttribute("session", session);
+
             RequestDispatcher encaminhar = request.getRequestDispatcher("/ListaProdutos.jsp");
             encaminhar.forward(request, response);
         } else {
