@@ -28,8 +28,8 @@
             }
         }
     %>
-
-    <a href="Login.jsp <% s.invalidate();%>">Sair</a>
+<%--    <% s.invalidate();%>--%>
+    <a href="Login.jsp ">Sair</a>
     <%out.println(tipo +" "+ s);%>
 
     <h1>Lista Produtos</h1>
