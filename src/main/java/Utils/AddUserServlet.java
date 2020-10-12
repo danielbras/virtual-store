@@ -1,3 +1,5 @@
+package Utils;
+
 import Utils.Usuario;
 import Utils.UsuarioSQL;
 
@@ -8,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "AddUserServlet", urlPatterns = {"/AddUser"})
+@WebServlet(name = "Utils.AddUserServlet", urlPatterns = {"/AddUser"})
 public class AddUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
