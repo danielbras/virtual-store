@@ -1,6 +1,7 @@
 package Utils;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,12 +13,13 @@ import java.io.IOException;
 @WebServlet(name = "VerCarrinhoServlet", urlPatterns = {"/Carrinho"})
 public class CarrinhoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String nomeProduto = request.getParameter("nome");
-//        String comando = request.getParameter("command");
-//
-//        Produto produto = ProdutoSQL.buscar(nomeProduto);
+        String nomeProduto = request.getParameter("nome");
+        String comando = request.getParameter("command");
 
-        HttpSession session = request.getSession(false);
+        Produto produto = ProdutoSQL.buscar(nomeProduto);
+
+        ServletContext context = request.getServletContext();
+        HttpSession session = (HttpSession) context.getAttribute("sessao");
         response.getWriter().println(session);
 //        String user = (String) session.getAttribute("usuario");
 //

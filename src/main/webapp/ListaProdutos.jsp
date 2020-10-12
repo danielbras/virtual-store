@@ -43,7 +43,13 @@
                     <%if(tipo.equals("Cliente")) { %>
                         <td>
                             <%if(p.getEstoque() > 0) { %>
-                                <a>Adicionar</a>
+                                <%
+                                    ServletContext context = request.getServletContext();
+                                    context.setAttribute("sessao", s);
+
+                                    String nomeProd = p.getNome();
+                                %>
+                                <a href="/Carrinho?nome=<%=nomeProd%>&&command=add">Adicionar</a>
                             <%} else {
                                 out.println("Sem estoque");
                             }%>
