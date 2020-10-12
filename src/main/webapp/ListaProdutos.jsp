@@ -35,16 +35,15 @@
             <%ArrayList<Produto> listaProdutos; %>
             <%listaProdutos = ProdutoSQL.listar(); %>
             <%for (Produto p: listaProdutos) { %>
-                <%String nome = p.getNome(); %>
                 <tr>
-                    <td><% out.println(nome); %></td>
+                    <td><% out.println(p.getNome()); %></td>
                     <td><% out.println(p.getDescricao()); %></td>
                     <td><% out.println(p.getPreco()); %></td>
                     <td><% out.println(p.getEstoque()); %></td>
                     <%if(tipo.equals("Cliente")) { %>
                         <td>
                             <%if(p.getEstoque() > 0) { %>
-                                <a href="/Carrinho">Adicionar</a>
+                                <a href="Carrinho">Adicionar</a>
                             <%} else {
                                 out.println("Sem estoque");
                             }%>
