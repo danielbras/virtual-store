@@ -48,8 +48,7 @@
                     <%if(tipo.equals("Cliente")) { %>
                         <td>
                             <%if(p.getEstoque() > 0) { %>
-                                <% String nomeProduto = p.getNome();%>
-                                <a href="/Carrinho?nome=<%=nomeProduto%>&&command=add">Adicionar</a>
+                                <a href="/Carrinho?nome=<%p.getNome();%>&&command=add">Adicionar</a>
                             <%} else {
                                 out.println("Sem estoque");
                             }%>
