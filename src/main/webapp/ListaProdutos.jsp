@@ -53,14 +53,6 @@
             <%} %>
     </table>
 
-    <%
-        Enumeration<String> p = s.getAttributeNames();
-
-        while (p.hasMoreElements()) {
-            out.println(p.nextElement());
-        }
-    %>
-
     <%if(tipo.equals("Cliente")) {%>
         <%if(s != null) { %>
             <a href="Carrinho.jsp">Ver Carrinho</a>
