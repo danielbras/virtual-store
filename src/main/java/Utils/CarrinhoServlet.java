@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet(name = "VerCarrinhoServlet", urlPatterns = {"/Carrinho"})
 public class CarrinhoServlet extends HttpServlet {
@@ -16,20 +17,18 @@ public class CarrinhoServlet extends HttpServlet {
         String nome = request.getParameter("nome");
         String comando = request.getParameter("command");
 
-        ServletContext context = request.getServletContext();
-        HttpSession s = (HttpSession) context.getAttribute("session");
-
         Produto produto = ProdutoSQL.buscar(nome);
-        s.setAttribute("nome", produto.getNome());
-        s.setAttribute("descricao", produto.getDescricao());
-        s.setAttribute("preco", produto.getPreco());
-//        to do inserir quantidade na sessão
-//        if(comando.equals("add")) {
 
-//        } else if(comando.equals("remove")) {
-//
-//        }
-//
+        if(comando.equals("add")) {
+            Carrinho carrinho = new Carrinho();
+            carrinho.addProduto(produto);
+        } else if(comando.equals("remove")) {
+            ServletContext context = getServletContext();
+            ArrayList<Produto> produtos = (ArrayList<Produto>) context.getAttribute("carrinho");
+            Carrinho carrinho = new Carrinho(produtos);
+            carrinho.removeProduto(produto.getNome());
+        }
+
         RequestDispatcher encaminhar = request.getRequestDispatcher("/ListaProdutos.jsp");
         encaminhar.forward(request, response);
     }
