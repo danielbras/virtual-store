@@ -48,7 +48,7 @@
     <%if(tipo.equals("Cliente")) {%>
         <%if(s != null) {%>
             <%RequestDispatcher dispatcher = request.getRequestDispatcher("/Carrinho.jsp");%>
-            <a href="<%dispatcher.forward(request, response);%>">
+            <a onclick="<%dispatcher.forward(request, response);%>">
                 Ver Carrinho
             </a>
         <%} else {
