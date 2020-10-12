@@ -37,27 +37,21 @@
             <%ArrayList<Produto> listaProdutos; %>
             <%listaProdutos = ProdutoSQL.listar(); %>
             <%for (Produto p: listaProdutos) { %>
-                <%
-                    String nome = p.getNome();
-                    String descricao = p.getDescricao();
-                    Double preco = p.getPreco();
-                    int estoque = p.getEstoque();
-                %>
                 <tr>
-                    <td><% out.println(nome); %></td>
-                    <td><% out.println(descricao); %></td>
-                    <td><% out.println(preco); %></td>
-                    <td><% out.println(estoque); %></td>
+                    <td><% out.println(p.getNome()); %></td>
+                    <td><% out.println(p.getDescricao()s()); %></td>
+                    <td><% out.println(p.getPreco()); %></td>
+                    <td><% out.println(p.getEstoque()); %></td>
                     <%if(tipo.equals("Cliente")) { %>
                         <td>
                             <%if(p.getEstoque() > 0) { %>
                                 <%
-                                    s.setAttribute("nome", nome);
-                                    s.setAttribute("descricao", descricao);
-                                    s.setAttribute("preco", preco);
-                                    s.setAttribute("quantidade", estoque);
+                                    s.setAttribute("nome", p.getNome());
+                                    s.setAttribute("descricao", p.getDescricao());
+                                    s.setAttribute("preco", p.getPreco());
+                                    s.setAttribute("quantidade", p.getEstoque());
                                 %>
-                                <a href="/Carrinho?nome=<%=nome%>&&command=add">Adicionar</a>
+                                <a href="/Carrinho?nome=<%=p.getNome()%>&&command=add">Adicionar</a>
                             <%} else {
                                 out.println("Sem estoque");
                             }%>
