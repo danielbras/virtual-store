@@ -20,8 +20,8 @@
 
     <a href="Login.jsp" <% s.invalidate(); %>>Sair</a>
 
-    <h1 align="center">Lista Produtos</h1>
-    <table align="center" border="1">
+    <h1>Lista Produtos</h1>
+    <table border="1">
         <tr>
             <th>Nome</th>
             <th>Descrição</th>
@@ -44,7 +44,7 @@
                     <%} %>
                 </tr>
             <%} %>
-            <td><a href="Carrinho.jsp">Ver Carrinho</a></td>
     </table>
+    <a href="Carrinho.jsp">Ver Carrinho</a>
 </body>
 </html>
