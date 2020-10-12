@@ -18,9 +18,6 @@
         HttpSession s = request.getSession(false);
         String user = (String) s.getAttribute("usuario");
         String tipo = (String) s.getAttribute("tipo");
-
-        ServletContext context = request.getServletContext();
-        context.setAttribute("sessao", s);
     %>
 
     <a href="Login.jsp <% s.invalidate();%>">Sair</a>

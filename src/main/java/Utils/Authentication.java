@@ -1,6 +1,7 @@
 package Utils;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -17,8 +18,11 @@ public class Authentication extends HttpServlet {
 
         if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
             HttpSession session = request.getSession();
+            ServletContext context = request.getServletContext();
+
             session.setAttribute("usuario", usuario.getEmail());
             session.setAttribute("tipo", usuario.getTipo());
+            context.setAttribute("sessao", session);
 
             RequestDispatcher encaminhar = request.getRequestDispatcher("/ListaProdutos.jsp");
             encaminhar.forward(request, response);
