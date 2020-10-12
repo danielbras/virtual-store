@@ -27,7 +27,7 @@
             <th>Descrição</th>
             <th>Preço</th>
             <th>Estoque</th>
-            <%if(!tipo.equals("Lojista")) { %>
+            <%if(tipo.equals("Cliente")) { %>
                 <th>Carrinho</th>
             <%} %>
         </tr>
@@ -39,12 +39,16 @@
                     <td><% out.println(p.getDescricao()); %></td>
                     <td><% out.println(p.getPreco()); %></td>
                     <td><% out.println(p.getEstoque()); %></td>
-                    <%if(!tipo.equals("Lojista")) { %>
+                    <%if(tipo.equals("Cliente")) { %>
                         <td><a href="">Adicionar</a></td>
                     <%} %>
                 </tr>
             <%} %>
     </table>
-    <a href="Carrinho.jsp">Ver Carrinho</a>
+    <%if(tipo.equals("Cliente")) {%>
+        <a href="Carrinho.jsp">Ver Carrinho</a>
+    <%} else {%>
+        <a href="CadastrarProduto.jsp">Cadastrar Produto</a>
+    <%}%>
 </body>
 </html>
