@@ -18,7 +18,7 @@
     <%s.setAttribute("SessionID" ,s.getId());%>
     <a href="Login.jsp" <%s.invalidate();%>>Sair</a>
     <h1 align="center">Lista Produtos</h1>
-    <table>
+    <table align="center" border="1">
         <tr>
             <th>Nome</th>
             <th>Descrição</th>
