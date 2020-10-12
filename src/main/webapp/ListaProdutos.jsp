@@ -18,10 +18,13 @@
         HttpSession s = request.getSession(false);
         String user = (String) s.getAttribute("usuario");
         String tipo = (String) s.getAttribute("tipo");
+
+        ServletContext context = request.getServletContext();
+        HttpSession sess = (HttpSession) context.getAttribute("sessao");
     %>
 
     <a href="Login.jsp <% s.invalidate();%>">Sair</a>
-    <%out.println(user +" "+ tipo +" "+ s);%>
+    <%out.println(user +" "+ tipo +" "+ s + "\n" + sess);%>
 
     <h1>Lista Produtos</h1>
     <table border="1">
