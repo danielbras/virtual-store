@@ -18,13 +18,10 @@ public class Authentication extends HttpServlet {
         Usuario usuario = UsuarioSQL.buscar(email);
 
         if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
+            HttpSession session = request.getSession(true);
             response.sendRedirect("/ListaProdutos.jsp?tipo="+usuario.getTipo());
 
 //            if(usuario.getTipo().equals("Cliente")){
-//                HttpSession session = request.getSession();
-//                String id = session.getId();
-//                session.setAttribute("SessionID" , id);
-//
 //                response.sendRedirect("/ListaProdutos.jsp?tipo=Cliente");
 //            } else {
 //                response.sendRedirect("/ListaProdutos.jsp?tipo=Lojista");
