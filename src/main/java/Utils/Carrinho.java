@@ -6,6 +6,7 @@ public class Carrinho {
     private ArrayList<Produto> produtos;
 
     public Carrinho() {
+        produtos = new ArrayList<>();
     }
 
     public Carrinho(ArrayList<Produto> produtos) {
