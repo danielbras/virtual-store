@@ -14,11 +14,9 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <%HttpSession s = request.getSession(); %>
-    <%s.setAttribute("SessionID" ,s.getId()); %>
     <%String tipo = request.getParameter("tipo"); %>
 
-    <a href="Login.jsp" <% s.invalidate(); %>>Sair</a>
+    <a href="Login.jsp" <% session.invalidate(); %>>Sair</a>
 
     <h1>Lista Produtos</h1>
     <table border="1">
@@ -45,8 +43,13 @@
                 </tr>
             <%} %>
     </table>
+
+    <%session.getAttribute("SessionID");%>
+
     <%if(tipo.equals("Cliente")) {%>
-        <a href="Carrinho.jsp">Ver Carrinho</a>
+        <%%>
+            <a href="Carrinho.jsp">Ver Carrinho</a>
+        <%%>
     <%} else {%>
         <a href="CadastrarProduto.jsp">Cadastrar Produto</a>
     <%}%>
