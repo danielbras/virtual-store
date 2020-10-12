@@ -15,11 +15,11 @@
 </head>
 <body>
     <%HttpSession s = request.getSession(false);%>
-    <%String id = s.getId();%>
+    <%String nome = (String) s.getAttribute("user");%>
     <%String tipo = request.getParameter("tipo"); %>
 
     <a href="Login.jsp<% s.invalidate(); %>">Sair</a>
-    <%out.println(id);%>
+    <%out.println(nome);%>
 
     <h1>Lista Produtos</h1>
     <table border="1">
