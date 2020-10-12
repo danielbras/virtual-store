@@ -15,6 +15,7 @@
 </head>
 <body>
     <%HttpSession s = request.getSession(false);%>
+    <%String id = s.getId();%>
     <%String tipo = request.getParameter("tipo"); %>
 
     <a href="Login.jsp" <% session.invalidate(); %>>Sair</a>
@@ -44,17 +45,13 @@
                 </tr>
             <%} %>
     </table>
-
+    <%out.println(id);%>
     <%if(tipo.equals("Cliente")) {%>
-        <%if(s != null) {%>
-
-            <a href="<%RequestDispatcher dispatcher = request.getRequestDispatcher("/Carrinho.jsp");%>">
-                <%dispatcher.forward(request, response);%>
-                Ver Carrinho
-            </a>
+        <%if(s != null) { %>
+            <a href="Carrinho.jsp">Ver Carrinho</a>
         <%} else {
             response.sendRedirect("/ListaProdutos.jsp?tipo=Cliente");
-        } %>
+        }%>
     <%} else {%>
         <a href="CadastrarProduto.jsp">Cadastrar Produto</a>
     <%}%>
