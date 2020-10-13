@@ -12,21 +12,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "VerCarrinhoServlet", urlPatterns = {"/Carrinho"})
+@WebServlet(name = "VerCarrinhoServlet", urlPatterns = {"/CarrinhoServlet"})
 public class CarrinhoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
         String comando = request.getParameter("command");
 
         Produto produto = ProdutoSQL.buscar(nome);
-        ServletContext context = getServletContext();
-        Carrinho carrinho = (Carrinho) context.getAttribute("carrinho");
+        HttpSession session = request.getSession();
+        Carrinho c = (Carrinho) session.getAttribute("carrinho");
+        if(c == null) {
+            c = new Carrinho();
+        }
 
         if(comando.equals("add")) {
-            carrinho.addProduto(produto);
+            c.addProduto(produto);
         } else if(comando.equals("remove")) {
-            carrinho.removeProduto(produto.getNome());
+            c.removeProduto(produto.getNome());
         }
+
+        session.setAttribute("carrinho", c);
 
         RequestDispatcher encaminhar = request.getRequestDispatcher("/ListaProdutos.jsp");
         encaminhar.forward(request, response);

@@ -12,6 +12,6 @@
 </head>
 <body>
     <h1>Lista Carrinho</h1>
-    <a href="ListaProdutos.jsp?tipo=Cliente"></a>
+    <% session.getAttribute("carrinho").toString();%>
 </body>
 </html>
