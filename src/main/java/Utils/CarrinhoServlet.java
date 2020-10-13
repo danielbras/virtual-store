@@ -21,6 +21,7 @@ public class CarrinhoServlet extends HttpServlet {
         Produto produto = ProdutoSQL.buscar(nome);
         HttpSession session = request.getSession();
         Carrinho c = (Carrinho) session.getAttribute("carrinho");
+
         if(c == null) {
             c = new Carrinho();
         }

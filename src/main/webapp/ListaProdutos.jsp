@@ -15,22 +15,12 @@
 </head>
 <body>
     <%
-        ServletContext context = request.getServletContext();
-        HttpSession s = (HttpSession) context.getAttribute("session");
-//        String tipo = (String) s.getAttribute("tipo");
-        Cookie[] c = request.getCookies();
-        String tipo = "Cliente";
-        if (c != null) {
-            for(int i = 0; i < c.length; i++) {
-                if(c[i].getName().equals("tipo")){
-                    tipo = c[i].getValue();
-                }
-            }
-        }
+        HttpSession s = request.getSession(false);
+        String tipo = (String) s.getAttribute("tipo");
+
     %>
-<%--    <% s.invalidate();%>--%>
-    <a href="Login.jsp ">Sair</a>
-    <%out.println(tipo +" "+ s);%>
+    <a href="Login.jsp">Sair</a>
+    <% out.println(tipo);%>
 
     <h1>Lista Produtos</h1>
     <table border="1">
