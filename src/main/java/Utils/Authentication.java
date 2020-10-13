@@ -17,7 +17,7 @@ public class Authentication extends HttpServlet {
         Usuario usuario = UsuarioSQL.buscar(email);
 
         if(email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
-            HttpSession session = request.getSession(false);
+            HttpSession session = request.getSession();
             session.setAttribute("tipo", usuario.getTipo());
 
             RequestDispatcher encaminhar = request.getRequestDispatcher("/ListaProdutos.jsp");
