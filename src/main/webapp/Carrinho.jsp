@@ -1,4 +1,4 @@
-<%--
+<%@ page import="Utils.Carrinho" %><%--
   Created by IntelliJ IDEA.
   User: carlo
   Date: 11/10/2020
@@ -12,6 +12,6 @@
 </head>
 <body>
     <h1>Lista Carrinho</h1>
-    <% session.getAttribute("carrinho").toString();%>
+    <%= (( Carrinho) session.getAttribute("carrinho")).getProdutos().size()%>
 </body>
 </html>
