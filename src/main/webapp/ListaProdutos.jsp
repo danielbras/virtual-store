@@ -17,9 +17,8 @@
     <%
         HttpSession s = request.getSession(false);
         String tipo = (String) s.getAttribute("tipo");
-
     %>
-    <a href="Login.jsp">Sair</a>
+    <a href="Logout.jsp">Sair</a>
     <% out.println(tipo);%>
 
     <h1>Lista Produtos</h1>
