@@ -15,8 +15,7 @@
         HttpSession s = request.getSession(false);
         s.invalidate();
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Login.jsp");
-        dispatcher.forward(request, response);
+        response.sendRedirect("/Login.jsp");
     %>
 </body>
 </html>
