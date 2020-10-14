@@ -5,10 +5,6 @@ import java.util.ArrayList;
 public class Carrinho {
     private ArrayList<Produto> produtos;
 
-    public Carrinho() {
-        produtos = new ArrayList<>();
-    }
-
     public Carrinho(ArrayList<Produto> produtos) {
         super();
         this.produtos = produtos;
