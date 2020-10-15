@@ -48,7 +48,7 @@
                                 out.println("Sem estoque");
                             }%>
                         </td>
-                    <%} %>
+                    <%} %>d
                 </tr>
             <%} %>
     </table>

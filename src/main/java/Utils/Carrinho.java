@@ -33,6 +33,17 @@ public class Carrinho {
         produtos.remove(p);
     }
 
+    public int quantidadeProduto (String nome){
+        int quantidade = 0;
+
+        for (Produto p : produtos) {
+            if(p.getNome().equals(nome)){
+                quantidade++;
+            }
+        }
+
+        return quantidade;
+    }
     public void addProduto (Produto p){
         produtos.add(p);
     }
