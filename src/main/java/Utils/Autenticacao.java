@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet(name = "AuthServlet", urlPatterns = "/ListaProdutos")
-public class Authentication extends HttpServlet {
+public class Autenticacao extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
