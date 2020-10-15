@@ -20,6 +20,8 @@
             out.println(p.getNome() + "" + p.getDescricao() + "" + p.getPreco());
         }
     %>
+
+    <a href="ListaProdutos.jsp">Ver Produtos</a>
 <%--    <%= (( Carrinho) session.getAttribute("carrinho")).getProdutos().size()%>--%>
 </body>
 </html>
