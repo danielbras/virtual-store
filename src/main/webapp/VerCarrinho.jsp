@@ -23,7 +23,7 @@
             <th>Nome</th>
             <th>Descrição</th>
             <th>Preço</th>
-            <th>Estoque</th>
+            <th>Quantidade</th>
             <th>Carrinho</th>
         </tr>
         <%for (Produto p: carrinho.getProdutos()) { %>
@@ -31,7 +31,7 @@
                 <td><% out.println(p.getNome()); %></td>
                 <td><% out.println(p.getDescricao()); %></td>
                 <td><% out.println(p.getPreco()); %></td>
-<%--                <td><% out.println();%></td>--%>
+                <td><% out.println("Empty");%></td>
                 <td><a href="/CarrinhoServlet?nome=<%=p.getNome()%>&&command=remove">Remover</a></td>
             </tr>
         <%} %>

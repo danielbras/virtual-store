@@ -35,7 +35,7 @@ public class Carrinho {
     public void addProduto (Produto p){
         if(this.produtos.contains(p)) {
             System.out.println("O produto já existe.");
-        } else if(this.produtos.isEmpty()) {
+        } else if(this.produtos.contains(p) == false) {
             this.produtos.add(p);
         }
     }
