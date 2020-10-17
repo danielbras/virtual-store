@@ -15,9 +15,9 @@
         <fieldset>
             <legend>Sing In</legend><br>
 
-            <label>Email:</label>
+            <label>Email:</label><br>
             <input type="email" name="email"><br>
-            <label>Senha: </label>
+            <label>Senha: </label><br>
             <input type="password" name="senha"><br><br>
             <button type="submit" >Sing In</button>
             <br><br>
