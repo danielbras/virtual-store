@@ -38,17 +38,22 @@ public class Carrinho {
     }
 
     public void addProduto (Produto p){
+        boolean flag = false;
+
 //        Gambiarra para saber a quantidade de um mesmo produto no carrinho
         if(!this.produtos.isEmpty()) {
             for (Produto produto : this.produtos) {
                 if (p.getNome().equals(produto.getNome())) {
+                    flag = true;
                     produto.incrementaQuantidade();
                 }
             }
-        } else {
-            p.incrementaQuantidade();
+        }
+//        Adiciona se o produto ainda não estiver no carrinho
+        if(flag){
             p.diminuiEstoque();
-            this.produtos.add(p);
+            p.incrementaQuantidade();
+            produtos.add(p);
         }
     }
 }
