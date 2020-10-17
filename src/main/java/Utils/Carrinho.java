@@ -41,7 +41,7 @@ public class Carrinho {
             p.incrementaQuantidade();
             produtos.add(p);
         }
-        if(flag){
+        if(!flag){
             produto.incrementaQuantidade();
         }
 //
