@@ -27,7 +27,10 @@ public class CarrinhoServlet extends HttpServlet {
         }
 
         if(comando.equals("add")) {
-            c.addProduto(p);
+            if(p.getQuantidade() <= p.getEstoque()) {
+                c.addProduto(p);
+                p.diminuiEstoque();
+            }
         } else if(comando.equals("remove")) {
             c.removeProduto(p.getNome());
             RequestDispatcher encaminhar = request.getRequestDispatcher("/VerCarrinho.jsp");

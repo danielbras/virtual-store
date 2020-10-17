@@ -56,11 +56,15 @@ public class Produto {
         this.estoque--;
     }
 
+    public int getQuantidade() {
+        return quantidade;
+    }
+
     public void incrementaQuantidade() {
         this.quantidade = this.quantidade + 1;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public void diminuiQuantidade() {
+        this.quantidade = this.quantidade - 1;
     }
 }
