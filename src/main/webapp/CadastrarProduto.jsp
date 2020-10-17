@@ -16,8 +16,6 @@
 <h1>Cadastrar Produto</h1>
 <form method="post" action="/ListaProdutos">
     <fieldset>
-        <legend>Novo produto</legend><br>
-
         <label>Nome:</label><br>
         <input type="text" name="nome"><br>
         <label>Descrição: </label><br>
@@ -26,7 +24,7 @@
         <input type="text" name="preco"><br>
         <label>Estoque:</label><br>
         <input type="number" name="estoque"><br>
-        <button type="submit" >Sing In</button>
+        <button type="submit">Cadastrar</button>
         <br><br>
     </fieldset>
 </form>
