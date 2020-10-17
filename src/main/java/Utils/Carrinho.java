@@ -29,14 +29,19 @@ public class Carrinho {
 
     public void removeProduto (String nome){
         Produto p = getProduto(nome);
-        produtos.remove(p);
+        if(p.getQuantidade() != 0){
+            p.diminuiQuantidade();
+        } else {
+            produtos.remove(p);
+        }
+
     }
 
     public void addProduto (Produto p){
         boolean flag = false;
         Produto produto = this.getProduto(p.getNome());
 
-        if(produto == null) {
+        if(produto == null){
             flag = true;
             p.incrementaQuantidade();
             produtos.add(p);
@@ -44,7 +49,7 @@ public class Carrinho {
         if(!flag){
             produto.incrementaQuantidade();
         }
-//
+//          Gambiarra quantidade de produtos no carrinho
 //        if(!this.produtos.isEmpty()) {
 //            for (Produto produto : this.produtos) {
 //                if (p.getNome().equals(produto.getNome())) {
