@@ -19,11 +19,11 @@
         <label>Nome:</label><br>
         <input type="text" name="nome"><br>
         <label>Descrição: </label><br>
-        <input type="text" name="descricao"><br><br>
+        <input type="text" name="descricao"><br>
         <label>Preço:</label><br>
-        <input type="text" name="preco"><br>
+        <input type="number" step="0.01" name="preco"><br>
         <label>Estoque:</label><br>
-        <input type="number" name="estoque"><br>
+        <input type="number" step="1" name="estoque"><br><br>
         <button type="submit">Cadastrar</button>
         <br><br>
     </fieldset>
