@@ -18,13 +18,13 @@
     <fieldset>
         <legend>Novo produto</legend><br>
 
-        <label>Nome:</label>
+        <label>Nome:</label><br>
         <input type="text" name="nome"><br>
-        <label>Descrição: </label>
+        <label>Descrição: </label><br>
         <input type="text" name="descricao"><br><br>
-        <label>Preço:</label>
+        <label>Preço:</label><br>
         <input type="text" name="preco"><br>
-        <label>Estoque:</label>
+        <label>Estoque:</label><br>
         <input type="number" name="estoque"><br>
         <button type="submit" >Sing In</button>
         <br><br>
