@@ -50,7 +50,7 @@ public class Carrinho {
             }
         }
 //        Adiciona se o produto ainda não estiver no carrinho
-        if(flag){
+        if(!flag){
             p.diminuiEstoque();
             p.incrementaQuantidade();
             produtos.add(p);
