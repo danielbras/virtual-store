@@ -6,7 +6,6 @@ public class Carrinho {
     private ArrayList<Produto> produtos;
 
     public Carrinho(ArrayList<Produto> produtos) {
-        super();
         this.produtos = produtos;
     }
 
@@ -30,16 +29,17 @@ public class Carrinho {
 
     public void removeProduto (String nome){
         Produto p = getProduto(nome);
+        p.diminuiQuantidade();
         produtos.remove(p);
     }
 
     public void addProduto (Produto p){
         Produto produto = this.getProduto(p.getNome());
-        if(produto == null) {
+        if(produto != null) {
+            produto.incrementaQuantidade();
+        } else {
             p.incrementaQuantidade();
             produtos.add(p);
-        } else {
-            produto.incrementaQuantidade();
         }
     }
 }
