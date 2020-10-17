@@ -10,6 +10,6 @@ import java.io.IOException;
 @WebServlet(name = "AdicionaProdutoServlet", urlPatterns = {"/AddProduto"})
 public class AdicionaProdutoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.sendRedirect("/CadastrarProduto.jsp");
     }
 }
