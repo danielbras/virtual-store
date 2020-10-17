@@ -30,8 +30,6 @@ public class CarrinhoServlet extends HttpServlet {
             c.addProduto(p);
         } else if(comando.equals("remove")) {
             c.removeProduto(p.getNome());
-            RequestDispatcher encaminhar = request.getRequestDispatcher("/VerCarrinho.jsp");
-            encaminhar.forward(request, response);
         }
 
         session.setAttribute("carrinho", c);
