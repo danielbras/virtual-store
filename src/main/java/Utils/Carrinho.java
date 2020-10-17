@@ -33,13 +33,16 @@ public class Carrinho {
     }
 
     public void addProduto (Produto p){
+        boolean flag = false;
+
         if(this.getProduto(p.getNome()) == null) {
+            flag = true;
             p.incrementaQuantidade();
             produtos.add(p);
-        } else {
+        }
+        if(!flag){
             p.incrementaQuantidade();
         }
-//        boolean flag = false;
 //
 //        if(!this.produtos.isEmpty()) {
 //            for (Produto produto : this.produtos) {
