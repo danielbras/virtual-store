@@ -5,6 +5,7 @@ public class Produto {
     private String nome;
     private String descricao;
     private int estoque;
+    private int quantidade;
 
     public Produto(String nome, String descricao, double preco, int estoque) {
         super();
@@ -12,6 +13,7 @@ public class Produto {
         this.nome = nome;
         this.descricao = descricao;
         this.estoque = estoque;
+        this.quantidade = 0;
     }
 
     public Produto() {
@@ -52,5 +54,13 @@ public class Produto {
 
     public void diminuiEstoque() {
         this.estoque--;
+    }
+
+    public void incrementaQuantidade() {
+        this.quantidade = this.quantidade + 1;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
     }
 }

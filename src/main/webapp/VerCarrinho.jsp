@@ -31,7 +31,7 @@
                 <td><% out.println(p.getNome()); %></td>
                 <td><% out.println(p.getDescricao()); %></td>
                 <td><% out.println(p.getPreco()); %></td>
-                <td><% out.println("Empty");%></td>
+                <td><% out.println(p.getQuantidade());%></td>
                 <td><a href="/CarrinhoServlet?nome=<%=p.getNome()%>&&command=remove">Remover</a></td>
             </tr>
         <%} %>
