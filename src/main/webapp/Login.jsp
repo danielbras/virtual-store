@@ -28,11 +28,11 @@
         <fieldset>
             <legend>Sing Up</legend><br>
 
-            <label>Nome:</label>
+            <label>Nome:</label><br>
             <input type="text" name="nome"><br>
-            <label>Email:</label>
+            <label>Email:</label><br>
             <input type="email" name="email"><br>
-            <label>Senha: </label>
+            <label>Senha: </label><br>
             <input type="password" name="senha"><br><br>
             <button type="submit">Sing Up</button>
         </fieldset>
