@@ -17,12 +17,12 @@ public class CarrinhoServlet extends HttpServlet {
         String comando = request.getParameter("command");
 
         Produto p = ProdutoSQL.buscar(nome);
-        ArrayList<Produto> produtos = new ArrayList<>();
 
         HttpSession session = request.getSession(false);
         Carrinho c = (Carrinho) session.getAttribute("carrinho");
 
         if(c == null) {
+            ArrayList<Produto> produtos = new ArrayList<>();
             c = new Carrinho(produtos);
         }
 

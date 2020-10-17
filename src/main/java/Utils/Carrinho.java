@@ -29,19 +29,14 @@ public class Carrinho {
 
     public void removeProduto (String nome){
         Produto p = getProduto(nome);
-        p.diminuiQuantidade();
         produtos.remove(p);
     }
 
     public void addProduto (Produto p){
-        if(this.produtos.contains(p)){
-            int index = this.produtos.indexOf(p);
-            Produto produto = this.produtos.get(index);
-            produto.incrementaQuantidade();
-        } else {
-            p.incrementaQuantidade();
+        if(this.produtos.contains(p)) {
+            System.out.println("O produto já existe.");
+        } else if(this.produtos.isEmpty()) {
             this.produtos.add(p);
         }
-
     }
 }
