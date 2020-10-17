@@ -49,11 +49,11 @@ public class Produto {
     }
 
     public void incrementaQuantidade() {
-        this.quantidade++;
+        this.quantidade += 1;
     }
 
     public void diminuiQuantidade() {
-        this.quantidade--;
+        this.quantidade -= 1;
     }
 
     public int getQuantidade() {

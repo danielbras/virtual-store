@@ -27,7 +27,6 @@ public class CarrinhoServlet extends HttpServlet {
         }
 
         if(comando.equals("add")) {
-
             c.addProduto(p);
         } else if(comando.equals("remove")) {
             c.removeProduto(p.getNome());
