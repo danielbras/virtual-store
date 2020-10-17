@@ -38,8 +38,8 @@ public class Carrinho {
 
         if(produto == null) {
             flag = true;
-            produto.incrementaQuantidade();
-            produtos.add(produto);
+            p.incrementaQuantidade();
+            produtos.add(p);
         }
         if(flag){
             produto.incrementaQuantidade();
