@@ -27,7 +27,7 @@ public class CarrinhoServlet extends HttpServlet {
         }
 
         if(comando.equals("add")) {
-            if(p.getQuantidade() <= p.getEstoque()) {
+            if(p.getQuantidade() < p.getEstoque()) {
                 c.addProduto(p);
                 p.diminuiEstoque();
             }

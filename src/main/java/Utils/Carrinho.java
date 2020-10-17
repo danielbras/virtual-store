@@ -43,7 +43,6 @@ public class Carrinho {
             for (Produto produto : this.produtos) {
                 if (p.getNome().equals(produto.getNome())) {
                     produto.incrementaQuantidade();
-
                 }
             }
         } else {
