@@ -29,7 +29,7 @@ public class Carrinho {
 
     public void removeProduto (String nome){
         Produto p = getProduto(nome);
-        if(p.getQuantidade() != 0){
+        if(p.getQuantidade() != 1){
             p.diminuiQuantidade();
         } else {
             produtos.remove(p);
