@@ -34,14 +34,15 @@ public class Carrinho {
 
     public void addProduto (Produto p){
         boolean flag = false;
+        Produto produto = this.getProduto(p.getNome());
 
-        if(this.getProduto(p.getNome()) == null) {
+        if(produto == null) {
             flag = true;
-            p.incrementaQuantidade();
-            produtos.add(p);
+            produto.incrementaQuantidade();
+            produtos.add(produto);
         }
-        if(!flag){
-            p.incrementaQuantidade();
+        if(flag){
+            produto.incrementaQuantidade();
         }
 //
 //        if(!this.produtos.isEmpty()) {
