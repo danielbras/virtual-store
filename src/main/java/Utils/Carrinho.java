@@ -34,13 +34,13 @@ public class Carrinho {
     }
 
     public void addProduto (Produto p){
-        if(produtos.contains(p)){
-            int index = produtos.indexOf(p);
-            Produto produto = produtos.get(index);
+        if(this.produtos.contains(p)){
+            int index = this.produtos.indexOf(p);
+            Produto produto = this.produtos.get(index);
             produto.incrementaQuantidade();
         } else {
             p.incrementaQuantidade();
-            produtos.add(p);
+            this.produtos.add(p);
         }
 
     }
