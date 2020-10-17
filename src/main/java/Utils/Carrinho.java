@@ -33,20 +33,26 @@ public class Carrinho {
     }
 
     public void addProduto (Produto p){
-        boolean flag = false;
-
-        if(!this.produtos.isEmpty()) {
-            for (Produto produto : this.produtos) {
-                if (p.getNome().equals(produto.getNome())) {
-                    flag = true;
-                    produto.incrementaQuantidade();
-                }
-            }
-        }
-//        Adiciona se o produto ainda não estiver no carrinho
-        if(!flag){
+        if(this.getProduto(p.getNome()) == null) {
             p.incrementaQuantidade();
             produtos.add(p);
+        } else {
+            p.incrementaQuantidade();
         }
+//        boolean flag = false;
+//
+//        if(!this.produtos.isEmpty()) {
+//            for (Produto produto : this.produtos) {
+//                if (p.getNome().equals(produto.getNome())) {
+//                    flag = true;
+//                    produto.incrementaQuantidade();
+//                }
+//            }
+//        }
+////        Adiciona se o produto ainda não estiver no carrinho
+//        if(!flag){
+//            p.incrementaQuantidade();
+//            produtos.add(p);
+//        }
     }
 }
