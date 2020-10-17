@@ -20,7 +20,7 @@ public class Carrinho {
     public Produto getProduto (String nome){
         Produto mp = null;
         for (Produto p : produtos){
-            if (p.getNome() == nome){
+            if (p.getNome().equals(nome)){
                 return p;
             }
         }
