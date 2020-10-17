@@ -17,16 +17,17 @@ public class CarrinhoServlet extends HttpServlet {
         String comando = request.getParameter("command");
 
         Produto p = ProdutoSQL.buscar(nome);
-        ArrayList<Produto> produto = new ArrayList<>();
+        ArrayList<Produto> produtos = new ArrayList<>();
 
         HttpSession session = request.getSession(false);
         Carrinho c = (Carrinho) session.getAttribute("carrinho");
 
         if(c == null) {
-            c = new Carrinho(produto);
+            c = new Carrinho(produtos);
         }
 
         if(comando.equals("add")) {
+
             c.addProduto(p);
         } else if(comando.equals("remove")) {
             c.removeProduto(p.getNome());

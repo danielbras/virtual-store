@@ -45,7 +45,7 @@ public class ProdutoSQL {
             }
         return listaProdutos;
 
-    }public static Produto buscar(String nome){
+    }public static Produto  buscar(String nome){
         Produto produto = null;
         try {
             Connection con = ConnectDatabase.getConnection();

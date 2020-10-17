@@ -3,15 +3,17 @@ package Utils;
 public class Produto {
     private double preco;
     private String nome;
-    private String Descricao;
+    private String descricao;
     private int estoque;
+    private int quantidade;
 
     public Produto(String nome, String descricao, double preco, int estoque) {
         super();
         this.preco = preco;
         this.nome = nome;
-        this.Descricao = descricao;
+        this.descricao = descricao;
         this.estoque = estoque;
+        this.quantidade = 0;
     }
 
     public Produto() {
@@ -35,15 +37,27 @@ public class Produto {
     }
 
     public String getDescricao() {
-        return Descricao;
+        return descricao;
     }
 
     public void setDescricao(String descricao) {
-        Descricao = descricao;
+        this.descricao = descricao;
     }
 
     public int getEstoque() {
         return estoque;
+    }
+
+    public void incrementaQuantidade() {
+        this.quantidade++;
+    }
+
+    public void diminuiQuantidade() {
+        this.quantidade--;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
     }
 
     public void incrementaEstoque() {
