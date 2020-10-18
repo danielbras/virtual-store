@@ -22,7 +22,7 @@ public class ProdutoSQL {
             instruction.setInt(4, p.getEstoque());
             instruction.execute();
             con.close();
-            System.out.println("Utils.Produto cadastrado com sucesso!!");
+            System.out.println("Produto cadastrado com sucesso!!");
         } catch (SQLException e) {
             System.out.println("Erro ao cadastrar produto no banco de dados " + e.getMessage());
         }
@@ -44,8 +44,9 @@ public class ProdutoSQL {
             System.out.println("Erro ao emitir a listagem de produtos no banco banco de dados " + e.getMessage());
             }
         return listaProdutos;
+    }
 
-    }public static Produto  buscar(String nome){
+    public static Produto  buscar(String nome){
         Produto produto = null;
         try {
             Connection con = ConnectDatabase.getConnection();

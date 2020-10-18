@@ -15,7 +15,8 @@ public class AdicionaProdutoServlet extends HttpServlet {
         Double precoProduto = Double.parseDouble(request.getParameter("preco"));
         int estoqueProduto = Integer.parseInt(request.getParameter("estoque"));
 
-        System.out.println(nomeProduto + "" + descricaoProduto + "" + precoProduto + "" + estoqueProduto);
+        Produto p = new Produto(nomeProduto, descricaoProduto, precoProduto, estoqueProduto);
+        ProdutoSQL.inserir(p);
         response.sendRedirect("/CadastrarProduto.jsp");
     }
 }
