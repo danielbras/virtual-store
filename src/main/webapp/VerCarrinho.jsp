@@ -14,7 +14,7 @@
     <title>Virtual Store</title>
 </head>
 <body>
-<h1>Lista Carrinho</h1>
+<h1>Meu Carrinho</h1>
 <%
     Carrinho carrinho = (Carrinho) session.getAttribute("carrinho");
 %>

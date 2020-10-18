@@ -17,7 +17,7 @@
     Carrinho c = (Carrinho) s.getAttribute("carrinho");
     Double subtotal = 0.0;
 %>
-<h1>Finaliza Compra</h1>
+<h1>Meu carrinho</h1>
 <div>
     <%for (Produto p : c.getProdutos()) { %>
     <%subtotal += p.getQuantidade() * p.getPreco();%>
@@ -25,6 +25,7 @@
     <%}%>
     <hr>
     <h3><%out.println("Total: "+subtotal);%></h3>
+    <a type="button" href="/FinalizaCarrinhoServlet">Finalizar Compra</a>
 </div>
 </body>
 </html>
