@@ -37,9 +37,9 @@
         </tr>
     <%}%>
 </table>
-
+<br>
 <a href="ListaProdutos.jsp">Ver Produtos</a>
-<p></p>
+<br>
 <a href="FinalizaCarrinho.jsp">Finalizar Carrinho</a>
 </body>
 </html>
