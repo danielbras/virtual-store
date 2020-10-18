@@ -25,7 +25,7 @@
     <%}%>
     <hr>
     <h3><%out.println("Total: "+subtotal);%></h3>
-    <a type="button" href="/FinalizaCarrinhoServlet">Finalizar Compra</a>
+    <a href="/FinalizaCarrinhoServlet">Finalizar Compra</a>
 </div>
 </body>
 </html>

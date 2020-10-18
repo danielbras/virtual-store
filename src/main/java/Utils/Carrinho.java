@@ -34,7 +34,10 @@ public class Carrinho {
         } else {
             produtos.remove(p);
         }
+    }
 
+    public void finalizarCarrinho(){
+        produtos.clear();
     }
 
     public void addProduto (Produto p){

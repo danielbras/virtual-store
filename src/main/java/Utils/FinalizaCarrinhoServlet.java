@@ -11,6 +11,13 @@ import java.io.IOException;
 @WebServlet(name = "FinalizaCarrinhoServlet", urlPatterns = {"/FinalizaCarrinhoServlet"})
 public class FinalizaCarrinhoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       response.sendRedirect("/ListaProdutos.jsp");
+        HttpSession s = request.getSession(false);
+        Carrinho c = (Carrinho) s.getAttribute("carrinho");
+
+        c.finalizarCarrinho();
+
+        s.setAttribute("carrinho", c);
+
+        response.sendRedirect("/ListaProdutos.jsp");
     }
 }
