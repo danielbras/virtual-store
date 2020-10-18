@@ -11,13 +11,6 @@ import java.io.IOException;
 @WebServlet(name = "FinalizaCarrinhoServlet", urlPatterns = {"/FinalizaCarrinhoServlet"})
 public class FinalizaCarrinhoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Double valorTotal = 0.0;
-
-        HttpSession s = request.getSession(false);
-        Carrinho c = (Carrinho) s.getAttribute("carrinho");
-
-        for (Produto p : c.getProdutos()) {
-            valorTotal += p.getPreco() * p.getQuantidade();
-        }
+       response.sendRedirect("/ListaProdutos");
     }
 }
