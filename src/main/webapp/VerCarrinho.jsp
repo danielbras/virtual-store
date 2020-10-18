@@ -27,15 +27,18 @@
         <th>Quantidade</th>
         <th>Carrinho</th>
     </tr>
-    <%for (Produto p : carrinho.getProdutos()) { %>
-    <tr>
-        <td><% out.println(p.getNome()); %></td>
-        <td><% out.println(p.getDescricao()); %></td>
-        <td><% out.println(p.getPreco()); %></td>
-        <td><% out.println(p.getQuantidade());%></td>
-        <td><a href="/CarrinhoServlet?nome=<%=p.getNome()%>&&command=remove">Remover</a></td>
-    </tr>
-    <%} %>
+    <%
+    if(carrinho != null){
+        <%for (Produto p : carrinho.getProdutos()) { %>
+            <tr>
+                <td><% out.println(p.getNome()); %></td>
+                <td><% out.println(p.getDescricao()); %></td>
+                <td><% out.println(p.getPreco()); %></td>
+                <td><% out.println(p.getQuantidade());%></td>
+                <td><a href="/CarrinhoServlet?nome=<%=p.getNome()%>&&command=remove">Remover</a></td>
+            </tr>
+        <%}
+    }%>
 </table>
 
 <a href="ListaProdutos.jsp">Ver Produtos</a>
