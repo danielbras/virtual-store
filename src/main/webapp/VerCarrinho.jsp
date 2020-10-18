@@ -17,7 +17,8 @@
 <h1>Meu Carrinho</h1>
 <%
     HttpSession s = request.getSession(false);
-    Carrinho carrinho = (Carrinho) s.getAttribute("carrinho");
+    Carrinho carrinho = null;
+    carrinho = (Carrinho) s.getAttribute("carrinho");
 %>
 <table border="1">
     <tr>
@@ -38,6 +39,8 @@
                 <td><a href="/CarrinhoServlet?nome=<%=p.getNome()%>&&command=remove">Remover</a></td>
             </tr>
         <%}
+    } else {
+        response.sendRedirect("/ListaProdutos.jsp");
     }%>
 </table>
 
