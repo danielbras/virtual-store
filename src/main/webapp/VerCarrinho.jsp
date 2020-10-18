@@ -17,11 +17,7 @@
 <h1>Meu Carrinho</h1>
 <%
     HttpSession s = request.getSession(false);
-    Carrinho carrinho = null;
-    carrinho = (Carrinho) s.getAttribute("carrinho");
-    if(carrinho == null){
-        response.sendRedirect("/ListaProdutos");
-    }
+    Carrinho carrinho = (Carrinho) s.getAttribute("carrinho");
 %>
 <table border="1">
     <tr>
