@@ -14,7 +14,7 @@
 <a href="ListaProdutos.jsp">Exibir Produtos</a>
 
 <h1>Cadastrar Produto</h1>
-<form method="post" action="/AdicionaProduto.jsp">
+<form method="post" action="/AddProduto">
     <fieldset>
         <label>Nome:</label><br>
         <input type="text" name="nome"><br>
