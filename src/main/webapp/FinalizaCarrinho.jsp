@@ -17,13 +17,13 @@
     Carrinho c = (Carrinho) s.getAttribute("carrinho");
     Double subtotal = 0.0;
 %>
-    <h1>Finaliza Compra</h1>
-    <div>
-        <%for (Produto p : c.getProdutos()){ %>
-            <%subtotal = p.getQuantidade() * p.getPreco();%>
-            <p><%out.println(p.getNome());%></p>
-        <%}%>
-        <p><%out.println(subtotal);%></p>
-    </div>
+<h1>Finaliza Compra</h1>
+<div>
+    <%for (Produto p : c.getProdutos()) { %>
+    <%subtotal += p.getQuantidade() * p.getPreco();%>
+    <h5><%out.println(p.getNome());%></h5>
+    <%}%>
+    <h5><%out.println(subtotal);%></h5>
+</div>
 </body>
 </html>

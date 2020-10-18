@@ -14,31 +14,31 @@
     <title>Virtual Store</title>
 </head>
 <body>
-    <h1>Lista Carrinho</h1>
-    <%
-        Carrinho carrinho = (Carrinho) session.getAttribute("carrinho");
-    %>
-    <table border="1">
-        <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Carrinho</th>
-        </tr>
-        <%for (Produto p: carrinho.getProdutos()) { %>
-            <tr>
-                <td><% out.println(p.getNome()); %></td>
-                <td><% out.println(p.getDescricao()); %></td>
-                <td><% out.println(p.getPreco()); %></td>
-                <td><% out.println(p.getQuantidade());%></td>
-                <td><a href="/CarrinhoServlet?nome=<%=p.getNome()%>&&command=remove">Remover</a></td>
-            </tr>
-        <%} %>
-    </table>
+<h1>Lista Carrinho</h1>
+<%
+    Carrinho carrinho = (Carrinho) session.getAttribute("carrinho");
+%>
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Carrinho</th>
+    </tr>
+    <%for (Produto p : carrinho.getProdutos()) { %>
+    <tr>
+        <td><% out.println(p.getNome()); %></td>
+        <td><% out.println(p.getDescricao()); %></td>
+        <td><% out.println(p.getPreco()); %></td>
+        <td><% out.println(p.getQuantidade());%></td>
+        <td><a href="/CarrinhoServlet?nome=<%=p.getNome()%>&&command=remove">Remover</a></td>
+    </tr>
+    <%} %>
+</table>
 
-    <a href="ListaProdutos.jsp">Ver Produtos</a>
-    <p></p>
-    <a href="/FinalizaCarrinho.jsp">Finalizar Carrinho</a>
+<a href="ListaProdutos.jsp">Ver Produtos</a>
+<p></p>
+<a href="/FinalizaCarrinho.jsp">Finalizar Carrinho</a>
 </body>
 </html>
