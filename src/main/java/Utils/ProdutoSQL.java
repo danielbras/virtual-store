@@ -8,14 +8,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProdutoSQL {
-    private static final String INSERT = "INSERT INTO produtos (\"Nome\", \"Descricao\", \"Preco\", \"Estoque\") VALUES (?, ?, ?, ?)";
-    private static final String SELECTALL = "SELECT * FROM produtos";
-    private static final String SELECT = "SELECT * FROM produtos WHERE \"Nome\"= ?";
+    private static final String INSERIR = "INSERT INTO produtos (\"Nome\", \"Descricao\", \"Preco\", \"Estoque\") VALUES (?, ?, ?, ?)";
+    private static final String ATUALIZAR = "UPDATE produtos SET \"Estoque\" = ? WHERE \"Nome\" = ?";
+    private static final String BUSCAR = "SELECT * FROM produtos WHERE \"Nome\"= ?";
+    private static final String LISTAR = "SELECT * FROM produtos";
 
-    public static boolean inserir(@org.jetbrains.annotations.NotNull Produto p) {
+    public static boolean inserir(@org.jetbrains.annotations.NotNull Produto p){
         try {
             Connection con = ConnectDatabase.getConnection();
-            PreparedStatement instruction = con.prepareStatement(INSERT);
+            PreparedStatement instruction = con.prepareStatement(INSERIR);
             instruction.setString(1, p.getNome());
             instruction.setString(2, p.getDescricao());
             instruction.setDouble(3, p.getPreco());
@@ -30,11 +31,25 @@ public class ProdutoSQL {
         }
     }
 
+    public static void atualizar(String nome, int estoque){
+        try {
+            Connection con = ConnectDatabase.getConnection();
+            PreparedStatement instruction = con.prepareStatement(ATUALIZAR);
+            instruction.setInt(1, estoque);
+            instruction.setString(2, nome);
+            instruction.execute();
+            con.close();
+            System.out.println("O produto: "+ nome +" foi alterado com sucesso!");
+        } catch (SQLException e){
+            System.out.println("Erro ao atualizar estoque de produto no banco de dados " + e.getMessage());
+        }
+    }
+
     public static ArrayList<Produto> listar(){
         ArrayList<Produto> listaProdutos = new ArrayList<>();
         try {
             Connection con = ConnectDatabase.getConnection();
-            PreparedStatement instruction = con.prepareStatement(SELECTALL);
+            PreparedStatement instruction = con.prepareStatement(LISTAR);
             ResultSet res = instruction.executeQuery();
             while (res.next()) {
                 Produto p = new Produto(res.getString("Nome"),res.getString("Descricao"), res.getDouble("Preco"), res.getInt("Estoque"));
@@ -52,7 +67,7 @@ public class ProdutoSQL {
         Produto produto = null;
         try {
             Connection con = ConnectDatabase.getConnection();
-            PreparedStatement instruction = con.prepareStatement(SELECT);
+            PreparedStatement instruction = con.prepareStatement(BUSCAR);
             instruction.setString(1, nome);
             ResultSet res = instruction.executeQuery();
             while (res.next()) {
