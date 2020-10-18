@@ -12,7 +12,7 @@ public class ProdutoSQL {
     private static final String SELECTALL = "SELECT * FROM produtos";
     private static final String SELECT = "SELECT * FROM produtos WHERE \"Nome\"= ?";
 
-    public static void inserir(Produto p) {
+    public static boolean inserir(@org.jetbrains.annotations.NotNull Produto p) {
         try {
             Connection con = ConnectDatabase.getConnection();
             PreparedStatement instruction = con.prepareStatement(INSERT);
@@ -23,8 +23,10 @@ public class ProdutoSQL {
             instruction.execute();
             con.close();
             System.out.println("Produto cadastrado com sucesso!!");
+            return true;
         } catch (SQLException e) {
             System.out.println("Erro ao cadastrar produto no banco de dados " + e.getMessage());
+            return false;
         }
     }
 
