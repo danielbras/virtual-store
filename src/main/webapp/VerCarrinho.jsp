@@ -16,7 +16,11 @@
 <body>
 <h1>Meu Carrinho</h1>
 <%
-    Carrinho carrinho = (Carrinho) session.getAttribute("carrinho");
+    Carrinho carrinho = null;
+    carrinho = (Carrinho) session.getAttribute("carrinho");
+    if(carrinho == null){
+        response.sendRedirect("/ListaProdutos");
+    }
 %>
 <table border="1">
     <tr>

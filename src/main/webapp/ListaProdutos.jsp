@@ -9,6 +9,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Utils.Produto" %>
 <%@ page import="Utils.ProdutoSQL" %>
+<%@ page import="Utils.Carrinho" %>
 <html>
 <head>
     <title>Virtual Store</title>
@@ -52,13 +53,14 @@
                 </tr>
             <%} %>
     </table>
-
+    <br>
     <%if(tipo.equals("Cliente")) {%>
-        <%if(s != null) { %>
-            <a href="VerCarrinho.jsp">Ver Carrinho</a>
-        <%} else {
-            response.sendRedirect("/ListaProdutos.jsp");
-        }%>
+        <a href="VerCarrinho.jsp">Ver Carrinho</a>
+<%--        if(c != null) { %>--%>
+<%--            <a href="VerCarrinho.jsp">Ver Carrinho</a>--%>
+<%--        <%} else {--%>
+<%--            response.sendRedirect("/ListaProdutos.jsp");--%>
+<%--        }%>--%>
     <%} else {%>
         <a href="CadastrarProduto.jsp">Cadastrar Produto</a>
     <%}%>
