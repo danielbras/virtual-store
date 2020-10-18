@@ -38,6 +38,7 @@
     </table>
 
     <a href="ListaProdutos.jsp">Ver Produtos</a>
-<%--    <%= (( Carrinho) session.getAttribute("carrinho")).getProdutos().size()%>--%>
+    <p></p>
+    <a href="/FinalizaCarrinhoServlet">Finalizar Carrinho</a>
 </body>
 </html>
