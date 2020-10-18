@@ -1,5 +1,6 @@
 <%@ page import="Utils.Carrinho" %>
-<%@ page import="Utils.Produto" %><%--
+<%@ page import="Utils.Produto" %>
+<%@ page import="Utils.ProdutoSQL" %><%--
   Created by IntelliJ IDEA.
   User: carlo
   Date: 18/10/2020
@@ -19,9 +20,16 @@
 %>
 <h1>Meu carrinho</h1>
 <div>
-    <%for (Produto p : c.getProdutos()) { %>
-    <%subtotal += p.getQuantidade() * p.getPreco();%>
-    <h3><%out.println(p.getQuantidade()+" "+p.getNome()+ ": R$ " +p.getPreco()); %></h3>
+    <%
+    Produto produto = null;
+    int quantidade = 0;
+    for (Produto p : c.getProdutos()) {
+        if(p.getQuantidade() <= p.getEstoque()){
+            quantidade = p.getEstoque() - p.getQuantidade();
+            ProdutoSQL.atualizar(p.getNome(), quantidade);
+        }
+        subtotal += p.getQuantidade() * p.getPreco();%>
+        <h3><%out.println(p.getQuantidade()+" "+p.getNome()+ ": R$ " +p.getPreco()); %></h3>
     <%}%>
     <hr>
     <h3><%out.println("Total: "+subtotal);%></h3>
