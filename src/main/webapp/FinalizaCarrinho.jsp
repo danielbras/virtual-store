@@ -21,9 +21,10 @@
 <div>
     <%for (Produto p : c.getProdutos()) { %>
     <%subtotal += p.getQuantidade() * p.getPreco();%>
-    <h5><%out.println(p.getNome()+ " - " +p.getPreco());%></h5>
+    <h3><%out.println(p.getNome()+ " - " +p.getPreco());%></h3>
     <%}%>
-    <h5><%out.println("Subtotal: "+subtotal);%></h5>
+    <hr>
+    <h3><%out.println("Subtotal: "+subtotal);%></h3>
 </div>
 </body>
 </html>
