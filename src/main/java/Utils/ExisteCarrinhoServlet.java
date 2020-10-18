@@ -14,7 +14,7 @@ public class ExisteCarrinhoServlet extends HttpServlet {
         HttpSession s = request.getSession(false);
         Carrinho c = (Carrinho) s.getAttribute("carrinho");
 
-        if(c == null){
+        if(c == null || c.getProdutos().isEmpty()){
             response.sendRedirect("/ListaProdutos.jsp");
         } else {
             response.sendRedirect("/VerCarrinho.jsp");
