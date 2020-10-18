@@ -11,6 +11,6 @@ import java.io.IOException;
 @WebServlet(name = "FinalizaCarrinhoServlet", urlPatterns = {"/FinalizaCarrinhoServlet"})
 public class FinalizaCarrinhoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       response.sendRedirect("/ListaProdutos");
+       response.sendRedirect("/ListaProdutos.jsp");
     }
 }
