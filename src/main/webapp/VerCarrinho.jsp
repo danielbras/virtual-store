@@ -39,6 +39,6 @@
 
     <a href="ListaProdutos.jsp">Ver Produtos</a>
     <p></p>
-    <a href="/FinalizaCarrinhoServlet">Finalizar Carrinho</a>
+    <a href="/FinalizaCarrinho.jsp">Finalizar Carrinho</a>
 </body>
 </html>
