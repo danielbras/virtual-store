@@ -13,7 +13,7 @@
 <body>
     <form method="post" action="/ListaProdutos">
         <fieldset>
-            <legend>Sing In</legend><br>
+            <legend>Log In</legend><br>
 
             <label>Email:</label><br>
             <input type="email" name="email"><br>
@@ -26,7 +26,7 @@
 
     <form method="post" action="/AddUsuario">
         <fieldset>
-            <legend>Sing Up</legend><br>
+            <legend>Sing up</legend><br>
 
             <label>Nome:</label><br>
             <input type="text" name="nome"><br>
