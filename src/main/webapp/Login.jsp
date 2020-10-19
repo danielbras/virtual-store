@@ -13,7 +13,7 @@
 <body>
     <form method="post" action="/ListaProdutos">
         <fieldset>
-            <legend>Log In</legend><br>
+            <legend>Log in</legend><br>
 
             <label>Email:</label><br>
             <input type="email" name="email"><br>
